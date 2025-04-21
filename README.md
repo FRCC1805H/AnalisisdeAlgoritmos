@@ -60,50 +60,89 @@ Si X e Y son dos conjuntos, denotamos su unión mediante X uY=|z |z € X oz e Y
 X \Y = (z | ze X peroz e Y).
 
 ### Enteros, reales e intervalos
-
+Es el proceso de evaluar el rendimiento de un algoritmo en términos de:
+* Eficiencia temporal (tiempo de ejecución).
+* Eficiencia espacial (uso de memoria).
+* Corrección y estabilidad numérica si trabaja con números reales o intervalos
 ### Funciones y relaciones
-### Cuantificadores 
-### Sumas y productos
-### Miscelánea
-## TÉCNICA DE DEMOSTRACIÓN 1: CONTRADICCIÓN
-## TÉCNICA DE DEMOSTRACIÓN 2: INDUCCIÓN MATEMÁTICA
-### El principio de inducción matemática
-### Un asunto completamente distinto
-### Inducción matemática generalizada
-### Inducción constructiva
+Una función en este contexto representa cómo crece el tiempo de ejecución ( o uso(o uso de memoria) de un algoritmo en relación con el tamaño de la entrada) .( n)
+Relación de recurrencia : Se utiliza en algoritmos recursivos para describir el tiempo de ejecución en función del tamaño del problema.
+Ejemplo clásico:
 
-## RECORDATORIOS
+T(n) = 2T(n/2) + n→ relación del algoritmo de MergeSort.
 
-### Lmites 
-### Series sencillas
-### Combinatoria básica
-### Probabilidad elemental
+Relación entre entradas y salidas : Se analiza cómo una entrada específica se transforma en una salida y qué tan costoso es ese proceso.
 
-## PROBLEMAS
-## REFERENCIAS Y TEXTOS MÁS AVANZADOS  
+Relación de orden : Permite clasificar algoritmos según su eficiencia.
+
+Por ejemplo:
+O(log n) ⊂ O(n) ⊂ O(n log n) ⊂ O(n²)
+(orden creciente de complejidad)
+
 
 # Resumen de los libros Capitulo 2 
 
 # ALGORITMIA ELEMENTAL
 
 ## INTRODUCCIÓN
-## PROBLAUAS Y DD ILARES
+La algoritmia es eles el estudio, diseño y análisis de algoritmos , es decir, secuencias finitas de pasos bien definidos que permiten resolver un problema o realizaro realizar una tarea de forma sistemática.
+
+Un algoritmo es como unaes como una receta o instrucción paso a paso para lograr un objetivo, ya sea en programación, matemáticas, lógica o la vida cotidiana.
+
 ## ERICIENCIA DE LOS ALGONITMOS
-## ANÁLISIS DE $%&&/(CASO MEDIOS) Y DE (CASO PEOR)
+La eficiencia de un algoritmo se refiere ade un algoritmo se refiere a qué tan bien utilizar los recursos disponibles ( como el tiempo(como el tiempo de ejecución y la memoriay la memoria ) al resolver un problema.
+
+Un algoritmo eficiente resuelve el problema correctamente usando la menor cantidad de recursos posible .
+
+*Del tamaño de la entrada ( n)
+*Del tipo de operaciones realizadas
+*La estructura del algoritmo
+*Del lenguaje y entorno de ejecución
+
+Un algoritmo eficiente no solo funciona , sino que lo hace de forma óptima .
+En programación real, elegir un algoritmo eficiente puede marcar la diferencia entre un programa utilizable y uno lento o inservible.
+
+## ANÁLISIS DE (CASO MEDIOS) Y DE (CASO PEOR)
+En el análisis de algoritmos, se estudia cómo se comporta un algoritmo según el tipo de entrada que recibe. Dos casos fundamentales son :que recibe. Dos casos fundamentales son:
+
+### Caso Peor
+
+Es la situación en la que el algoritmo tarda más tiempo posible en completarseen completarse, debido a una entrada desfavorable.
+Ayuda a garantizar el límite máximo de tiempo o recursos que puedes usarque puede usar un algoritmo.
+Se representa con la notación O (Big O) .
+
+### Ejemplo
+
+*En una búsqueda lineal de un elemento en una lista de nelementos:
+*El caso peor ocurre cuando el elemento no está en la lista .
+*Se revisan los nelementos → O(n) .
+
+### Caso Medio 
+
+Es el tiempo promedio que toma un algoritmo en una gran cantidad de ejecuciones, considerando todas las entradas posibles .
+Da una estimación más realista del rendimiento del algoritmo en la práctica.
+Se representa con la notación Θ (Theta).
+
+### Ejemplo 
+
+*Si el elemento está en una posición aleatoria.
+*El caso medio es buscar después de recorrer la mitad de los elementos → Θ(n/2) , pero se simplifica como Θ(n) .
+
 ## ¿QUÉ ES LINA OPERACIÓN ELEMENTAL?
+
+Una operación elemental es una acciónes una acción básica e indivisible queque realiza un algoritmo y que consume un tiempo constante , es decir, su tiempo de ejecución no depende del tamaño de la entrada .
+Al analizar un algoritmo, se cuentan las operaciones elementales para estimar cuEstopara estimar cuántos pasos se requieren.
+Esto ayuda a calcular su complejidad temporal .
+Aunque una operación elemental siempre se considera como una sola unidad de tiempo , su cantidad total puede crecer con el tamaño de la entrada.
+Por eso, al analizar algoritmos, se estudia cuántas operaciones elementales se ejecutan en total.
+
 ## POR QUÉ HAY QUE BUSCAR LA EFICIENCIA?
 
-## EMPLOS
-### Calculo de determinantes
-### Orderiación
-### Multiplicación de enteros muy grandes
-### Cálculo del máximo común divisor
-### Cálculo de la sucesión de Fibonacci
-### Transformada de Fourier
+Buscar eficiencia en algoritmos significa encontrar soluciones que resen algoritmos significa encontrar soluciones que resuelvan problemas utilizando la menor cantidad posible de tiempo y recursos ( como memoria(como recuerdo).
 
-## CUÁNDO QUEDA ESPECIFIÇADO UN ALGORITMO?
-## PROBLEMAS
-## REFERENCIAS Y TEXTOS MÁS AVANZADOS
+Un algoritmo eficiente resuelve bien un problema , pero además lo hace rápido y con poco gasto computacional , incluso cuando trabaja con grandes cantidades de datos .
+No es solo una buena práctica buscar la eficiencia, es una necesidad .
+Permite crear programas más rápidos, más inteligentes y más útiles, especialmente en un mundo donde los datos crecen cada día más.
 
 # Resumen de los libros Capitulo 3
 
