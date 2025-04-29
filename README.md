@@ -79,6 +79,22 @@ Por ejemplo:
 O(log n) ⊂ O(n) ⊂ O(n log n) ⊂ O(n²)
 (orden creciente de complejidad)
 
+### Cuantificadores
+### Sumas y productos
+### Miscelánea
+## TÉCNICA DE DEMOSTRACIÓN:CONTRADICCIÓN
+## TÉCNICA DE DEMOSTRACIÓN:INDUCCIÓN MATEMÁTICA
+### El principio de inducción matemática
+### Un asunto completamente distinto
+### Inducción matemática generalizada
+### Inducción constructiva
+## RECORDATORIOS
+### Límites
+### Series sencillas
+### Combinatoria básica
+### Probabilidad elemental
+## Problemas 
+## Referencias y Textos Mas Avanzados
 
 # Resumen de los libros Capitulo 2 
 
@@ -143,6 +159,16 @@ Buscar eficiencia en algoritmos significa encontrar soluciones que resen algorit
 Un algoritmo eficiente resuelve bien un problema , pero además lo hace rápido y con poco gasto computacional , incluso cuando trabaja con grandes cantidades de datos .
 No es solo una buena práctica buscar la eficiencia, es una necesidad .
 Permite crear programas más rápidos, más inteligentes y más útiles, especialmente en un mundo donde los datos crecen cada día más.
+## EJEMPLOS
+### Cálculo de determinantes
+### Ordenación
+### Multiplicación de enteros muy grandes
+### Cálculo del máximo común divisor
+### Cálculo de la sucesión de Fibonacci
+### Transformada de Fourier
+## ¿CUÁNDO QUEDA ESPECIFICADO UN ALGORITMO?
+## PROBLEMAS
+##  REFERENCIAS Y TEXTOS MÁS AVANZADOS
 
 # Resumen de los libros Capitulo 3
 
@@ -154,3 +180,28 @@ Permite crear programas más rápidos, más inteligentes y más útiles, especia
 ## OPERACIONES SOBRE NOTACIÓN ASINTÓTICA 
 ## PROBLEMAS
 ## REFERENCIAS Y TEXTOS MAS AVANZADOS
+
+# Resumen de los libros Capitulo 4
+
+# ANÁLISIS DE ALGORITMOS 
+## INTRODUCCIÓN
+## ANÁLISIS DE LAS ESTRUCTURAS DE CONTROL
+### Secuencias 
+### Bucles "para" (desde)
+### Llamadas recursivas
+### Bucles "mientras" y "repetir"
+## USO DE UN BARÓMETRO
+## EJEMPLOS ADICIONALES
+## ANÁLISIS DEL CASO MEDIO
+## ANALISIS AMORTIZADO
+## RESOLUCIÓN DE RECURRENCIAS
+### Suposiciones inteligentes
+### Recurrencias homogéneas
+### Recurrencias no homogéneas
+### Cambios de variable
+### Transtormaciones de intervalo
+### Recurrencias asintóticas
+## PROBLEMAS
+## REFERENCIAS Y TENTOS MÁS AVANZADOS
+
+# Resumen de los libros Capitulo 5
