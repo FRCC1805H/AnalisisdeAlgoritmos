@@ -163,3 +163,83 @@ aproximadamente igual a mt queda justificada, salvo por un caso crucial: / = mt
 es completamente incorrecto cuando m = 0 (¡resulta incluso peor cuando m es ne-gativo!). Veremos en la Sección 4.3 que despreciar el tiempo necesario para el control del bucle puede dar lugar a graves errores en tales circunstancias.
 Resista la tentación de decir que el tiempo requerido por el bucle está en
 O(mt) con el pretexto de la notación © sólo tiene efecto más allá de algún umbral tal como m ≥ 1. El problema de este argumento es que si estamos realmente analizando todo un algoritmo y no simplemente el bucle para, entonces el umbral implícito en la notación © concierne a i, el tamaño del caso, y no a mi, el número de veces que pasamos por el bucle, y m = 0 podría suceder para valores arbitrariamente grandes de . Por otra parte, siempre y cuando t esté acotado inferiormente por alguna constante (lo cual siempre es cierto en la práctica), y siempre y cuando exista un umbral », tal que m ≥ 1 siempre que i1 2 11, el problema 4.3 pide demostrar que ‹ está ciertamente en ®(mt) cuando /, m y t se consideran como funciones de n.
+## Taller de pasarlo a java 
+public class MergeSort {
+
+    // Función que combina dos subarreglos ordenados
+    public static void merge(int[] A, int p, int q, int r) {
+        int nL = q - p + 1; // Tamaño del subarreglo izquierdo
+        int nR = r - q;     // Tamaño del subarreglo derecho
+
+        // Crear arreglos temporales
+        int[] L = new int[nL];
+        int[] R = new int[nR];
+
+        // Copiar los datos a los arreglos temporales
+        for (int i = 0; i < nL; i++) {
+            L[i] = A[p + i];
+        }
+
+        for (int j = 0; j < nR; j++) {
+            R[j] = A[q + 1 + j];
+        }
+
+        int i = 0, j = 0, k = p;
+
+        // Mezclar los arreglos temporales de vuelta al arreglo original A
+        while (i < nL && j < nR) {
+            if (L[i] <= R[j]) {
+                A[k] = L[i];
+                i++;
+            } else {
+                A[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+
+        // Copiar los elementos restantes de L, si hay alguno
+        while (i < nL) {
+            A[k] = L[i];
+            i++;
+            k++;
+        }
+
+        // Copiar los elementos restantes de R, si hay alguno
+        while (j < nR) {
+            A[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+
+    // Función recursiva Merge Sort
+    public static void mergeSort(int[] A, int p, int r) {
+        if (p < r) {
+            int q = (p + r) / 2;
+            mergeSort(A, p, q);
+            mergeSort(A, q + 1, r);
+            merge(A, p, q, r);
+        }
+    }
+
+    // Función para imprimir un arreglo
+    public static void printArray(int[] A) {
+        for (int i : A) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
+    // Método principal para probar Merge Sort
+    public static void main(String[] args) {
+        int[] arr = {38, 27, 43, 3, 9, 82, 10};
+        System.out.println("Arreglo original:");
+        printArray(arr);
+
+        mergeSort(arr, 0, arr.length - 1);
+
+        System.out.println("Arreglo ordenado:");
+        printArray(arr);
+    }
+}
