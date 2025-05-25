@@ -4,7 +4,7 @@
 
 # Lib Fundamentos de Algoritmia 
 
-# Preliminares 
+# Preliminares Semana 1 
 
 ## Introduccion 
 En este libro hablaremos de algoritmos y de algoritmia. Este capítulo introductorio define en primer lugar lo que queremos decir con estas dos palabras. lustraremos esta discusión formal mostrando varias formas de realizar una sencilla multiplicación. También las tareas de todos los días poseen profundidades ocul-tas. Además aprovecharemos la oportunidad para explicar por qué pensamos que el estudio de los algoritmos es a la vez útil e interesante.
@@ -77,7 +77,23 @@ Por ejemplo:
 O(log n) ⊂ O(n) ⊂ O(n log n) ⊂ O(n²)
 (orden creciente de complejidad)
 
-# ALGORITMIA ELEMENTAL
+### Cuantificadores
+### Sumas y productos
+### Miscelánea
+## TÉCNICA DE DEMOSTRACIÓN 1: CONTRADICCIÓN
+## TÉCNICA DE DEMOSTRACIÓN 2: INDUCCIÓN MATEMÁTICA
+### El principio de inducción matemática
+### Un asunto completamente distinto
+### Inducción matemática generalizada
+### Inducción constructiva
+## RECORDATORIOS
+### Límites 
+### Series sencillas
+### Combinatoria básica
+### Probabilidad elemental
+## PROBLEMAS
+
+# ALGORITMIA ELEMENTAL Semana 2
 
 ## INTRODUCCIÓN
 La algoritmia es eles el estudio, diseño y análisis de algoritmos , es decir, secuencias finitas de pasos bien definidos que permiten resolver un problema o realizaro realizar una tarea de forma sistemática.
@@ -140,29 +156,105 @@ No es solo una buena práctica buscar la eficiencia, es una necesidad .
 Permite crear programas más rápidos, más inteligentes y más útiles, especialmente en un mundo donde los datos crecen cada día más.
 
 
-# NOTACIÓN ASINTÓTICA 
+# NOTACIÓN ASINTÓTICA  Semana 3
 Esta notación se denomina «asintótica» porque trata acerca del comportamiento de funciones en el límite, esto es, para valores suficientemente grandes de su pa-rámetro. En consecuencia, los argumentos basados en la notación asintótica pueden no llegar a tener un valor práctico cuando el parámetro adopta valores « de la vida real». Sin embargo, las enseñanzas de la notación asintótica suelen tener una relevancia significativa. Esto se debe a que, como regla del pulgar, un algoritmo que sea superior asintóticamente suele ser (aunque no siempre) preferible incluso en casos de tamaño moderado.
+
 ## UNA NOTACIÓN PARA "EL ORDEN DE"
+
 Aun cuando es natural utilizar el símbolo «» de teoría de conjuntos para denotar que n' es del orden de i' tal como en «n' e O (n3)», le advertimos que la notación tradicional es n? = O (17'). Por tanto, no se sorprenda si encuentra una de estas «igualdades» de un solo sentido, porque uno nunca escribiría O (n") = 1ª, en otros libros o artículos científicos. Aquellos que utilizan las igualdades de un solo sentido dicen que 12 es del orden de (o algunas veces sobre el orden de) n', o bien que n'es O (n*). Otra diferencia significativa que se puede encontrar en la definición de la notación O es que algunos escritores permiten que O (f(n)) incluya las funciones de los números naturales en el conjunto de todos los enteros reales
 —incluyendo los reales negativos— y definen que una función está en O (f(n)) si
 su valor absoluto está en lo que nosotros llamamos O (f(n)).
 Por comodidad, nos permitiremos utilizar incorrectamente la notación de vez en cuando (así como otra notación que se presenta más adelante en este capítulo).
 Por ejemplo, podemos decir que t(n) está en el orden de f(n) incluso si f(n) es negativo o no está definido para un número finito de valores de n. De manera simi-lar, podemos hablar acerca del orden de f(n) incluso en el caso de que f(i) sea negativa o no esté definida para un número finito de valores de n. Diremos entonces que t(n) e O (f(ir)) si existe una constante real y positiva c y un umbral entero n, tales que tanto (i) como f(il) están bien definidos y 0 ≤ t(n) ≤ cf(n) siempre que ≥ 11, independientemente de lo que suceda en estas funciones cuando n < ". Por ejemplo, está permitido hablar del orden de n/log i, aun cuando esta función no está definida cuando n = 0 ó n1 = 1, y es correcto escribir 1'-3n*-11-8 € O(n*) aun cuando n°- 3n2- 11-8 < 0 cuando n ≤ 3.
+
 ## OTRA NOTACIÓN ASINTÓTICA
+
 Dado que ningún ejemplar de tamaño n puede tomar más tiempo que el tiempo máximo requerido por los ejemplares de ese tamaño, se sigue que la implementación requiere un tiempo acotado por cf(i) microsegundos para todos los ejemplares suficientemente grandes. Suponiendo que solamente exista un número finito de ejemplares de tamaño, puede haber solamente un número finito de ejemplares, todos ellos de tamaño menor que el umbral, sobre los cuales la implementación requiera un tiempo mayor que cf(i1) microsegundos. Suponiendo que f(i) nunca sea cero, todos éstos se pueden resolver utilizando una constante multiplicativa mayor, tal como se hace en la demostración de la regla del umbral.
 Por contraste, supongamos que (n) € Q(f(n)). Una vez más, esto significa que existe una constante real positiva d tal que t(1) ≥ df(n) para todo n suficientemente grande. Ahora bien, dado que t(i) denota el comportamiento de esa implementación en el caso peor, podemos inferir solamente que, para cada i suficientemente grande, existe al menos il ejemplar de tamaño i1 tal que la implementación requiere al menos df(i) microsegundos para ese ejemplo. Esto no excluye la posibilidad de un comportamiento mucho más rápido sobre otros ejemplares del mismo tamaño. Por tanto, pueden existir infinitos ejemplares en los cuales la implementación requiera menos de df(n) microsegundos. La ordenación por inserción ofrece un ejemplo típico de este comportamiento. Vimos en la Sección 2.+ que se requiere un tiempo cuadrático en el caso peor, pero sin embargo existen infinitos ejemplares en los cuales se ejecuta en un tiempo lineal. Por tanto, tenemos derecho a manifestar que el tiempo de ejecución en el caso peor está tanto en O(172) como en S2(11*).
+
 ## NOTACIÓN ASINTÓTICA CONDICIONAL
+
 Es eventualmente no decreciente —y por tanto, que no es uniforme porque
 b(2' - 1) = k mientras que b(2*) = 1 para todo k. Sin embargo, f(n) e O (logn), que
 es una función uniforme. (Este ejemplo no es tan artificial como pudiera parecer; véase la Sección 7.8.) En raras ocasiones se encontrarán funciones de crecimiento lento que no estén en el orden exacto de una función suave.
 Una propiedad útil de la uniformidad (ajuste o suavización) es que si f es b-uni-forme para algún entero concreto b ≥ 2, entonces, de hecho, es uniforme. Para demostrar esto, considérense dos enteros cualesquiera a y b mayores o iguales que 2 Supongamos que f es b-uniforme. Debemos demostrar que j es también a-uniforme.
 Sean c y no constantes tales que f (bil) ≤ c f (n) y f (1) ≤f (u + 1) para todo n ≥ 11o. Sea i = [log, al. Por definición del logaritmo, a = bosy ≤ blog = b Considérse cualquier n ≥ 0. Es fácil mostrar por inducción matemática sobre la b-uniformidad de f que f (b' n) ≤ c f (11). Pero f (an) ≤ f (b' n) (porque f es asintomáticamente no decreciente y b'n ≥ an ≥ no. Se sigue que f (an) ≤ô f (n) para ^ = c', y por tanto f es a-uniforme Las funciones uniformes son interesantes como consecuencia de la regla de la uniformidad (ajuste o suavidad). Sea f: 1 *→:2 una función suave y sea t:.. →. una función asintóticamente no decreciente. Considérese cualquier entero / ≥ 2.
-## ANÁLISIS DE LAS ESTRUCTURAS DE CONTROL
+
+## NOTACIÓN ASINTÓTICA CON VARIOS PARÁMETROS
+
+## ANÁLISIS DE ALGORITMOS
+### INTRODUCCIÓN
+
+## ANÁLISIS DE LAS ESTRUCTURAS DE CONTROL  
+
 Además este tiempo está, claramente, acotado inferiormente por mt. Si c es despreciable en comparación con t, entonces nuestra estimación anterior de / como
 aproximadamente igual a mt queda justificada, salvo por un caso crucial: / = mt
 es completamente incorrecto cuando m = 0 (¡resulta incluso peor cuando m es ne-gativo!). Veremos en la Sección 4.3 que despreciar el tiempo necesario para el control del bucle puede dar lugar a graves errores en tales circunstancias.
 Resista la tentación de decir que el tiempo requerido por el bucle está en
 O(mt) con el pretexto de la notación © sólo tiene efecto más allá de algún umbral tal como m ≥ 1. El problema de este argumento es que si estamos realmente analizando todo un algoritmo y no simplemente el bucle para, entonces el umbral implícito en la notación © concierne a i, el tamaño del caso, y no a mi, el número de veces que pasamos por el bucle, y m = 0 podría suceder para valores arbitrariamente grandes de . Por otra parte, siempre y cuando t esté acotado inferiormente por alguna constante (lo cual siempre es cierto en la práctica), y siempre y cuando exista un umbral », tal que m ≥ 1 siempre que i1 2 11, el problema 4.3 pide demostrar que ‹ está ciertamente en ®(mt) cuando /, m y t se consideran como funciones de n.
+
+### Secuencias
+### Bucles "para" (desde).
+### Llamadas recursivas
+### Bucles "mientras" y "repetir"
+## USO DE UN BARÓMETRO
+## ANÁLISIS DEL CASO MEDIO
+## ANÁLISIS AMORTIZADO
+## RESOLLCIÓN DE RECURRENCIAS
+### Suposiciones inteligentes
+### Recurrencias homogéneas
+### Recurrencias no homogéneas
+### Cambios de variable
+### Transformaciones de intervalo
+### Recurrencias asintóticas.
+
+## ESTRUCTURAS DE DATOS Semana 5
+## MATRICES (ARRAYS), PILAS Y COLAS
+## REGISTROS Y PUNTEROS (APUNTADORES)
+## LISTAS
+## GRAFOS
+## ÁRBOLES
+## TABLAS ASOCIATIVAS
+## MONTÍCULOS (HEAPS) 
+## MONTÍCULOS BINOMIALES
+## ESTRUCTURAS DE CONJUNTOS DISJUNTOS (PARTICIÓN)
+
+## ALGORIIMOS VORACES Semana 6
+### DAR LA VUELTA (1) 
+### CARACTERÍSTICAS GENERALES DE LOS ALGORITMOS VORACES
+### GRAFOS: ÁRBOLES DE RECUBRIMIENTO MÍNIMO
+### Algoritmo de Kruskal
+### Algoritmo de Prim
+## GRAFOS: CAMINOS MÍNIMOS
+## EL PROBLEMA DE LA MOCHILA (I)
+## PLANIFICACIÓN 
+### Minimización del tiempo del sistema
+### Planificación con plazo fijo
+
+## DIVIDE Y VENCERÁS Semana 7
+## INTRODUCCIÓN: MULTIPLICACIÓN DE ENTEROS MUY GRANDES
+## EL CASO GENERAL
+## BÚSQUEDA BINARIA
+## ORDENACIÓN 
+### Ordenación por fusión
+### Ordenación rápida (Quicksort)
+## BÚSQUEDA DE LA MEDIANA
+## MULTIPLICACIÓN DE MATRICES
+## EXPONENCIACTÓN
+## ENSAMBLANDO TODAS LA PIEZAS: INTRODUCCIÓN A LA CRIPTOGRAFÍA
+
+## PROGRAMACIÓN DINÁMICA Semana 8
+## DOS EJEMPLOS SENCILLOS
+### Cálculo del coeficiente binomial
+### El campeonato mundial
+## DEVOLVER CAMBIO (2)
+## EL PRINCIPIO DE OPTIMALIDAD
+## EL PROBLEMA DE LA MOCHILA (2)
+## CAMINOS MÍNIMOS
+## MULTIPLICACIÓN ENCADENADA DE MATRICES
+## ENFOQUES QUE APLICAN RECURSIÓN
+## FUNCIONES CON MEMORIA
+
 ## Taller de pasarlo a java 
 public class MergeSort {
 
