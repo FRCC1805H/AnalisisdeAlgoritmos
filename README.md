@@ -678,7 +678,7 @@ public class Solucion {
 ![image](https://github.com/user-attachments/assets/ed4397f8-8073-4cf8-869a-b4b9abd48721)
 ![image](https://github.com/user-attachments/assets/95135ac6-5881-4245-ad2c-5afd4e721b04)
 ![image](https://github.com/user-attachments/assets/a1d5d9ba-01a4-4ab1-93c4-e21130eec051)
-
+![image](https://github.com/user-attachments/assets/664f8bba-4c10-4fe0-9f45-2b8734b8609d)
 
 ![image](https://github.com/user-attachments/assets/d79845db-8704-4c50-b642-9bbf13a433a7)
 
