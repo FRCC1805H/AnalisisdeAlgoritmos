@@ -663,7 +663,7 @@ public class MergeSort {
 ```java
 public class Solucion {
     public static void main(String[] args) {
-        int resultado = calcularResultado(10); // Puedes ajustar el valor según sea necesario
+        int resultado = calcularResultado(10); // Se ajustar el valor según sea necesario
         System.out.println("El resultado es: " + resultado);
     }
 
