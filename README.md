@@ -659,6 +659,23 @@ public class MergeSort {
 }
 ![image](https://github.com/user-attachments/assets/b242a124-0e28-4bf3-8c45-7c7d249fc16a)
 ![image](https://github.com/user-attachments/assets/0c99e59a-7302-4837-b6e7-72433bfdc642)
+![image](https://github.com/user-attachments/assets/c76fdf1c-83ed-4acd-90df-6edbabd75a64)
+```java
+public class Solucion {
+    public static void main(String[] args) {
+        int resultado = calcularResultado(10); // Puedes ajustar el valor según sea necesario
+        System.out.println("El resultado es: " + resultado);
+    }
+
+    public static int calcularResultado(int n) {
+        if (n <= 1) {
+            return 1;
+        }
+        return 2 * calcularResultado(n - 1) + 1;
+    }
+}
+```
+![image](https://github.com/user-attachments/assets/ed4397f8-8073-4cf8-869a-b4b9abd48721)
 
 
 
