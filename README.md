@@ -299,14 +299,74 @@ O(mt) con el pretexto de la notación © sólo tiene efecto más allá de algún
 
 ### Secuencias
 
+Sean P, y P, dos fragmentos de un algoritmo. Pueden ser instrucciones individuales o bien subalgoritmos complicados. Sean /, y t, los tiempos requeridos por P, y P, respectivamente. Estos tiempos pueden depender de distintos parámetros, tales como el tamaño del caso. La regla de la composición secuencial dice que el tiempo necesario para calcular "P; P,", esto es, primero P, y después P,, es simplemente t, + 1,. Por la regla del máximo este tiempo está en O(máx (f, (,).
+A pesar de su sencillez, la aplicación de esta regla puede ser menos fácil de lo que parece en principio. Por ejemplo, puede ser que uno de los parámetros que controlan / dependa del resultado del cálculo efectuado por P,. Por tanto, el análisis de "P,; P,'
+" no siempre se puede efectuar considerando P, y P, independientemente.
+
 ### Bucles "para" (desde).
+
+Tanto aquí como en el resto del libro adoptamos el convenio de que n1 = 0 no es un error; significa simplemente que la instrucción controlada P(i) no se ejecuta ni una sola vez. Supongamos que este bucle es parte de un algoritmo más extenso, que trabaja en un ejemplar deitamaño 1. (Tenga cuidado para no confundir i con m.) El caso más sencillo es aquel en el cual el tiempo requerido por P(i) no depende realmente de i, aun cuando pudiera depender del tamaño del ejemplar o, más general-mente, del ejemplar en sí. Supongamos que t denota el tiempo requerido para calcular P(i). En este caso, el análisis evidente del bucle es que P(i) se efectúa m ve-ces, cada una de las cuales tiene un coste f, y por tanto el tiempo total requerido por
+el bucle es simplemente / = mt. Aun cuando este enfoque suele ser apropiado, existe un posible problema: no hemos tenido en cuenta el tiempo necesario para el control del bucle.
+
 ### Llamadas recursivas
+
+Si contamos las sumas con coste unitario, h(m) está acotado por una constante, y la ecuación de recurrencia para T(i1) es muy similar a la que ya hemos encontrado para g(i) en la Sección 1.6.4. La inducción constructiva se aplica igualmente bien para alcanzar la misma conclusión: T(i) e O(f,). Sin embargo, es más sencillo en este caso aplicar la técnica de la Sección 4.7 para resolver la recurrencia 4.1.
+Un razonamiento similar muestra que T(i1) e Q(f,), y por tanto T(n) e O(f,). Empleando la fórmula de Moivre, concluimos que fibrec(n) requiere un tiempo exponencial en 1. Es decir doblemente exponencial en el tamaño del caso, puesto que el valor de i es exponencial en el tamaño de 1.
+Si no se cuentan las adiciones con un coste unitario, /(i1) ya no queda acotado por una constante. En lugar de ocurrir esto, l(1) está dominado por el tiempo requerido para la adición de f.L, Y f, 2 para i suficientemente grande. Ya hemo- ris-to que esta adición requiere un tiempo que es del orden exacto de 1. Por tanto /z(m1) e ©(i1). Las técnicas de la Sección 4.7 son aplicables una vez más para resolver la recurrencia 4.1. Sorprendentemente, el resultado es el mismo independientemente de si h() es constante o lineal: sigue sucediendo que T(I) e O(f). En conclu-sión, Fibrec(n) requiere un tiempo exponencial en i1 (tanto si se cuentan las adiciones con coste unitario como si no!). La única diferencia es la constante multi-plicativa oculta en la notación (-).\
+
 ### Bucles "mientras" y "repetir"
+
+Los bucles mientras (while) y repetir (repeat) suelen ser más difíciles de analizar que los bucles para (for), porque no existe una forma evidente a priori de saber cuántas veces tendremos que pasar por el bucle. La técnica estándar para analizar estos bucles es hallar una función de las variables implicadas cuyo valor se decremente en cada pasada. Para concluir que el bucle terminará por acabar, basta con saber que este valor debe ser un entero positivo. (No se puede seguir de-crementando indefinidamente un mínimo natural.) Para determinar el número de veces que se repite el bucle, sin embargo, necesitamos conocer mejor la forma en que disminuye el valor de esta función. Una aproximación alternativa al análisis del bucle mientras consiste en tratarlo como un algoritmo recursivo. Ilustraremos ambas técnicas con el mismo ejemplo. El análisis de bucles repetir se efectúa de manera similar; no daremos ejemplos de ellos en esta sección.
+Estudiaremos con detalle la búsqueda binaria en la Sección 7.3. Sin embargo, la utilizamos ahora porque ilustra perfectamente el análisis de los bucles mientras.
+El objetivo de la búsqueda binaria es hallar un elemento x de un vector /(l..n) que está ordenado de modo no decreciente. Supongamos por sencillez que está garantizado que x aparece al menos una vez en T.
+
 ## USO DE UN BARÓMETRO
+
+El análisis de muchos algoritmos se simplifica de forma significativa cuando es posible aislar una instrucción —o una comprobación— como barómetro. Una "ins-trucción barómetro" es aquella que se ejecuta por lo menos con tanta frecuencia como cualquier otra instrucción del algoritmo. (No pasa nada si algunas instrucciones se ejecutan como mucho un número constante de veces más que el baró-metro, puesto que su contribución quedará absorbida en la notación asintótica.)
+Siempre que el tiempo requerido por cada instrucción esté acotado por una cons-tante, el tiempo requerido por el algoritmo completo es del orden exaclo del número de veces que se ejecuta la instrucción barómetro.
+Este enfoque resulta útil porque nos permite despreciar los tiempos exactos que requieren las distintas instrucciones. En particular, evita la necesidad de tener que introducir constantes tales como las que acotan el tiempo requerido por las distintas operaciones elementales, que carecen de significado puesto que dependen de la implementación, y se descartan cuando se expresa el resultado final en términos de la notación asintótica. Por ejemplo, considérese el análisis de Fibiter en la Sección 4.2.2 si contamos todas las operaciones aritméticas como de coste unitario. Vimos que el algoritmo requiere un tiempo acotado superior por en para alguna constante c carente de significado, y por tanto requiere un tiempo que está en O(i).
+
+### Operacion de Inserccion 
+
+A diferencia de la ordenación por selección, se vio en la Sección 2.4 que el tiempo necesario para ordenar n objetos por inserción depende significativamente del orden original de los elementos. Aquí analizamos este algoritmo en el caso peor; el análisis del caso medio se da en la Sección 4.5. Para analizar el tiempo de ejecución de este algoritmo, seleccionamos como barómetro el número de veces que se comprueba la condición (j > 0 y x < TIj)) del bucle mientras.
+Consideremos un valor fijo de i. Sea x = T[i), como en el algoritmo. El caso
+peor surge cuando x es menor que TUl para todo j entre 1 e/-2, puesto que en este caso tenemos que comparar x con Tli - 11, Tli - 21...., TIl antes de poder salir del bucle mientras, porque j = 0. Por tanto el bucle mientras se efectúa / veces en el caso peor. Este caso peor sucede para todos los valores de i entre 2 y 1 cuando el vector está ordenado inicialmente por orden decreciente. Entonces la comprobación del barómetro se efectúa 2,2 / = n (17 + 1)/2-1 veces en total, lo cual está en O(11ª).
+
+### Algoritmos de Euclides 
+
+Considérese lo que sucede con m y 1 después de pasar dos veces por el bucle, suponiendo que el algoritmo no se detenga antes. Supongamos que mu y 11, denotan el valor original de los parámetros. Después de la primera pasada por el bu-cle, m pasa a ser i1, mod mn. Después de la segunda pasada por el bucle, i toma ese valor. Por la observación anterior, » se ha vuelto más pequeño que 1o/2. En otras palabras, el valor de n se divide como mínimo por dos después de pasar dos veces por el bucle. En ese momento sigue siendo cierto que i ≥ m y por tanto vuelve a ser aplicable el mismo razonamiento: si el algoritmo no se ha detenido antes, otras dos pasadas por el bucle harán que el valor de n sea al menos dos veces más pequeño. Con cierta experiencia, la conclusión es ahora inmediata: en el bucle se va a entrar como máximo, aproximadamente, 2 lg 1 veces.
+Formalmente, lo mejor es completar el análisis del algoritmo de Euclides tratando al bucle mientras como si fuese un algoritmo recursivo. Sea f(() el máximo número de veces que el algoritmo pasa por el bucle con unas entradas m y i cuando es m ≤ 11 ≤ 1. Si n ≤ 2, pasamos por el bucle o bien cero veces (si m = 0) o bien una vez. En caso contrario, o bien pasamos por el bucle menos de dos veces (si 171
+= 0 ó m divide a i exactamente), o al menos dos veces.
+
+### Las Torres de Hanoi
+
+Las Torres de Hanoi nos ofrecen otro ejemplo del análisis de algoritmos recur-sivos. Se dice que después de crear el mundo, Dios puso en la tierra tres barras hechas de diamantes y 64 anillos de oro. Estos anillos son todos ellos de distintos tamaños. En la creación, se dispusieron en la primera barra por orden de tamaños, con el mayor en la parte inferior y el menor en la parte superior. También creó Dios un monasterio junto a las barras. La tarea de los monjes durante su vida es trasladar todos los anillos a la segunda barra. La única operación permitida es trasladar un solo anillo de una barra a otra de tal manera que nunca se coloque un anillo encima de otro que sea menor. Cuando los monjes hayan finalizado su tarea, dice la leyenda, se acabará el mundo. Probablemente sea la profecía que ofrece más consuelo con respecto al fin del mundo, porque si los monjes se las arreglasen para mover un anillo por segundo, trabajando día y noche sin descansar ni cometer errores, ¡su trabajo no habría terminado 500.000 millones de años después de que empezaran! ¡Son más de 25 veces la edad estimada del Universo!
+Es evidente que el problema se puede generalizar para un número arbitrario de anillos, n.
+
+### Cálculo de determinantes
+
+Otro ejemplo mas de análisis de la recursividad es el que concierne al algoritmo recursivo para calcular un determinante. Recuérdese que el determinante de una matriz n x n se puede calcular a partir de los determinantes de n matrices más peque-ñas, (n- 1) × (n- 1) que se obtienen borrando la primera fila y alguna columna de la matriz original. Una vez que se han calculado los n subdeterminantes, el determinante de la matriz original se calcula con mucha rapidez. Además de las llamadas re-cursivas, la operación dominante que se necesita consiste en crear las n submatrices cuyos determinantes es preciso calcular. Esto requiere un tiempo que está en ®(n°) si se implementa directamente, pero basta un tiempo ®(n) si se utilizan punteros en lugar de copiar elementos. Por tanto, el tiempo total t(n) que se necesita para calcular el determinante de una matriz n x n mediante el algoritmo recursivo está dado por la recurrencia t(n) = nt(n-1) + h(n) para n ≥ 2, donde h(n) € ®(n). Esta recurrencia no se puede tratar mediante las técnicas de la Sección 4.7. Sin embargo, vimos en el problema 1.31 que la inducción constructiva es aplicable para concluir que t(n) € ®(n!), lo cual muestra que este algoritmo es muy ineficiente.
+
 ## ANÁLISIS DEL CASO MEDIO
+
+Esto requiere suponer a priori una distribución de probabilidad para los casos en que se pedirá que resuelva nuestro algoritmo. La conclusión del análisis en el caso medio puede depender crucialmente de esta suposición, y este análisis puede inducir a error si de hecho nuestras suposiciones no se corresponden con la realidad de la aplicación que utiliza el algoritmo. Este tema tan importante se discutía con más extensión en la Sección 2.4, y volveremos a él en la Sección
+10.7. En la mayoría de las ocasiones, los análisis en el caso medio se efectúan haciendo la suposición (más o menos realista) consistente en que todos los ejemplares de un tamaño dado son igualmente probables. Para los problemas de ordena-ción, resulta más sencillo suponer también que todos los elementos que hay que ordenar son distintos.
+Supongamos que se tienen que ordenar i elementos distintos por inserción, ! que las i! permutaciones de estos elementos son igualmente probables. Para determinar el tiempo requerido en el caso medio por el algoritmo, podríamos sumar los tiempos requeridos para ordenar todas y cada una de las permutaciones posibles y dividir entonces por n! la respuesta obtenida. Una aproximación alternati-va, más sencilla en este caso, consiste en analizar directamente el tiempo requerimiento.
+
 ## ANÁLISIS AMORTIZADO
+
+En algunas ocasiones, el análisis del caso peor es excesivamente pesimista.
+Considérese por ejemplo un proceso P que tiene efectos secundarios, lo cual significa que P modifica el valor de variables globales. Como resultado de los efectos secundarios, dos llamadas sucesivas e idénticas a P podrían requerir cantidades de tiempo radicalmente diferentes. Cuando se esté analizando un algoritmo que tenga a P como subalgoritmo, lo fácil sería analizar P en el caso peor, y suponer que sucede lo peor cada vez que se llama a P. Este enfoque produce una respuesta correcta suponiendo que estemos satisfechos con un análisis en notación O, por oposición a la notación ©, pero la respuesta sería pesimista. Considérese por ejemplo el bucle siguiente:
+para i - 1 hasta i hacer P
+Si P requiere un tiempo en O(log n) en el caso peor, es correcto concluir que el bucle requiere un tiempo en O(n log «), pero puede suceder que sea mucho más rápido incluso en el caso peor. Esto podría suceder si P no puede tardar mucho tiempo (S(logn)) a no ser que haya sido invocado muchas veces anteriormente, con un coste pequeño en todas las llamadas. Por ejemplo, podría suceder que P requiriera un tiempo constante en el caso medio, en cuyo caso el bucle completo se ejecutaría en un tiempo lineal.
+
 ## RESOLLCIÓN DE RECURRENCIAS
+
+El último paso indispensable cuando se está analizando un algoritmo es frecuentemente la resolución de una ecuación de recurrencia. Con un poco de experiencia y de intuición, la mayoría de las recurrencias se puede resolver mediante suposiciones inteligentes. Sin embargo, existe una potente técnica que se puede utilizar para resolver de forma casi automática ciertas clases de recurrencias. Ese es el tema principal de esta sección: la técnica de la ecuación característica.
+
 ### Suposiciones inteligentes
+
+
 ### Recurrencias homogéneas
 ### Recurrencias no homogéneas
 ### Cambios de variable
