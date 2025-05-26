@@ -596,24 +596,29 @@ para i ← 1 hasta n - 1 hacer
 ```
 ![image](https://github.com/user-attachments/assets/3aad2066-f822-48ef-bd4c-0c807249a16c)
 ![image](https://github.com/user-attachments/assets/4126e990-80d5-4b37-b364-eca6df1f149e)
-
-
-
-
+![image](https://github.com/user-attachments/assets/88da33bd-bf51-428b-971c-5286b376ca09)
+![image](https://github.com/user-attachments/assets/da8674ce-a6d6-4110-9d75-f06627fde032)
+![image](https://github.com/user-attachments/assets/63592516-de95-4e9a-83a1-a2503a20f581)
 
 ## Taller de pasarlo a java 
 public class MergeSort {
 
-    // Función que combina dos subarreglos ordenados
-    public static void merge(int[] A, int p, int q, int r) {
-        int nL = q - p + 1; // Tamaño del subarreglo izquierdo
-        int nR = r - q;     // Tamaño del subarreglo derecho
+    public static void mergeSort(int[] A, int p, int r) {
+        if (p < r) {
+            int q = (p + r) / 2;
+            mergeSort(A, p, q);
+            mergeSort(A, q + 1, r);
+            merge(A, p, q, r);
+        }
+    }
 
-        // Crear arreglos temporales
+    public static void merge(int[] A, int p, int q, int r) {
+        int nL = q - p + 1;
+        int nR = r - q;
+
         int[] L = new int[nL];
         int[] R = new int[nR];
 
-        // Copiar los datos a los arreglos temporales
         for (int i = 0; i < nL; i++) {
             L[i] = A[p + i];
         }
@@ -624,62 +629,37 @@ public class MergeSort {
 
         int i = 0, j = 0, k = p;
 
-        // Mezclar los arreglos temporales de vuelta al arreglo original A
         while (i < nL && j < nR) {
             if (L[i] <= R[j]) {
-                A[k] = L[i];
-                i++;
+                A[k++] = L[i++];
             } else {
-                A[k] = R[j];
-                j++;
+                A[k++] = R[j++];
             }
-            k++;
         }
 
-        // Copiar los elementos restantes de L, si hay alguno
         while (i < nL) {
-            A[k] = L[i];
-            i++;
-            k++;
+            A[k++] = L[i++];
         }
 
-        // Copiar los elementos restantes de R, si hay alguno
         while (j < nR) {
-            A[k] = R[j];
-            j++;
-            k++;
+            A[k++] = R[j++];
         }
     }
 
-    // Función recursiva Merge Sort
-    public static void mergeSort(int[] A, int p, int r) {
-        if (p < r) {
-            int q = (p + r) / 2;
-            mergeSort(A, p, q);
-            mergeSort(A, q + 1, r);
-            merge(A, p, q, r);
-        }
-    }
-
-    // Función para imprimir un arreglo
-    public static void printArray(int[] A) {
-        for (int i : A) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
-    }
-
-    // Método principal para probar Merge Sort
+    // Método principal para probarlo
     public static void main(String[] args) {
-        int[] arr = {38, 27, 43, 3, 9, 82, 10};
-        System.out.println("Arreglo original:");
-        printArray(arr);
+        int[] A = {2, 5, 8, 3, 6, 7};
+        mergeSort(A, 0, A.length - 1);
 
-        mergeSort(arr, 0, arr.length - 1);
-
-        System.out.println("Arreglo ordenado:");
-        printArray(arr);
+        // Imprimir el arreglo ordenado
+        for (int num : A) {
+            System.out.print(num + " ");
+        }
     }
 }
+![image](https://github.com/user-attachments/assets/b242a124-0e28-4bf3-8c45-7c7d249fc16a)
+![image](https://github.com/user-attachments/assets/0c99e59a-7302-4837-b6e7-72433bfdc642)
+
+
 
 
