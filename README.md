@@ -78,20 +78,115 @@ O(log n) ⊂ O(n) ⊂ O(n log n) ⊂ O(n²)
 (orden creciente de complejidad)
 
 ### Cuantificadores
+
+Los símbolos V y 3 se leen «para todo» y «existe», respectivamente. Para ilustrar esto, considérese un conjunto arbitrario X y una propiedad P sobre X. Escribimos (V x e X) IP (x)) para indicar que «todos los x de X tienen la misma propiedad P». De manera similar:
+(5 x e X) [P (x)]
+significa que «existe al menos un elemento de x en X que tiene la propiedad P».
+Finalmente, escribiremos (9! x e X)IP (x)| para significar «existe exactamente un x en X que tiene la propiedad P». Si X es el conjunto vacío, (Vx e X) [P (x)] siempre es vacíamente verdadero,número natural mayor todavía. Cuando se utiliza la alternancia de cuantificadores, el orden en el cual se presentan los cuantificadores es importante. Por ejemplo, la afirmación (a m e N)Vn e N) (m> n 1 es evidentemente falsa: significaría que existe un entero m que es mayor que todos los números naturales (incluyendo el propio m).
+Siempre y cuando el conjunto X sea infinito, resulta útil decir que no solamente existe un x e X tal que la propiedad de P (x) es cierta, sino que además existen infinitos de ellos. El cuantificador apropiado en este caso es 3.
+Por ejemplo, ( = n e N) [n es primo]. Obsérvese que E es más fuerte que J pero más débil que V. Otro cuantificador útil, más fuerte que i pero todavía más débil que V, es V, que se usa cuando una propiedad es válida en todos los casos salvo posiblemente para un número finito de excepciones.
+Por ejemplo, (Vn e N) [si n es primo, entonces n es impar] significa que los números primos siempre son impares, salvo posiblemente por un número finito de excepciones, en este caso hay solamente una excepción: 2 es a la vez primo y par.
+Cuando estamos interesados en las propiedades de los números naturales, existe una definición equivalente para estos cuantificadores, y suele ser mejor pensar en ellos en consecuencia.
+
 ### Sumas y productos
+
+En el caso en que n = 0, la suma se define como 0. Esto se generaliza en la fo
+ma evidente para denotar una suma cuando i va desde m hasta n siempre cuando m sn + 1. En algunas ocasiones resulta útil considerar sumas condicio nales. Si P es una propiedad de los enteros,
+TS (1)
+denota la suma de f (i) para todos los enteros i tal que sea válido P (i). Esta suma puede no estar bien definida si involucra a un número infinito de enteros, podemos incluso utilizar una notación mixta.
+
 ### Miscelánea
+
+Sin embargo, cuando x es negativo y no es un entero en sí x es más pequeño que este valor por una unidad. Por ejemplo, L-3½J = 4. De manera similar, definimos el techo de x, que se denota como Lx., como el menor entero que no es menor que x. Obsérvese que x - 1 < Lx ≤ x ≤|x|<x + 1 para todo x.
+Si m ≥ 0 y n > 0 son enteros, m/n denota como siempre el resultado de dividir m por n, lo cual no es necesariamente un entero. Por ejemplo, 7/2 = 3½. Denotamos el cociente entero mediante el símbolo « =», por tanto 7 ÷ 2 = 3. For-malmente, m + n = Lm/n). También utilizamos mod para denotar el operador
+«módulo» que se define , En otras palabras, m mod n es el resto cuando m es dividido por n.
+Si m es un entero positivo, denotamos el producto de los m primeros enteros
+positivos como m!, lo cual se lee factorial de m. Es natural definir 0! = 1. Ahora
+bien n! = n x (n - 1)! para todos los enteros positivos n. Una aproximación útil del factorial es la que da la fórmula de Stirling: n ! = V2m n (n/e)", en donde e es la base de los logaritmos naturales.
+Sin y r son enteros tales que 0≤Sn, se representa mediante ()el número de formas de seleccionar r elementos de un conjunto de cardinalidad n, sin tener en cuenta el orden en el cual hagamos nuestras.
+
 ## TÉCNICA DE DEMOSTRACIÓN 1: CONTRADICCIÓN
+
+Ya hemos visto que puede existir toda una selección de algoritmos disponibles cuando nos preparamos para resolver un problema. Para decidir cuál es el más adecuado para nuestra aplicación concreta, resulta crucial establecer las propiedades matemáticas de los diferentes algoritmos, tal como puede ser el tiempo de ejecución como función del tamaño del ejemplar que haya que resolver. Esto puede implicar demostrar estas propiedades mediante una demostración matemáti-ca. Esta sección y la siguiente revisan dos técnicas de demostración que suelen ser útiles en Algoritmia: la demostración por contradicción y la demostración por inducción matemática.
+La demostración por contradicción, que también se conoce como prueba indirec-ta, consiste en demostrar la veracidad de una sentencia demostrando que su negación da lugar a una contradicción. En otras palabras, supongamos que se desea demostrar la sentencia S. Por ejemplo, S podría ser «existe un número infinito de números primos». Para dar una demostración indirecta de S, se empieza por suponer que S es falso (o, equivalentemente, suponiendo que «no S» es verdadero). ¿Qué se puede deducir si, a partir de esa suposición, el razonamiento matemático establece la veracidad de una afirmación que es evidentemente falsa? Naturalmente, podría ser que el razonamiento en cuestión estuviera equivocado.
+
+### Demostración
+
+Sea P el conjunto de los números primos. Supongamos para buscar una tradicción que P es un conjunto finito. El conjunto P no es vacío, porque contiene al : nos el entero 2. Dado que P es finito y no está vacío, tiene sentido multiplicar todos: elementos. Sea x ese producto, y sea y el valor x + 1. Consideremos el menor entero que es mayor que 1 y que es el divisor de y. Este entero existe ciertamente por cuanto es mayor que 1 y no exigimos que d sea distinto de y. Obsérvese en primer lugar que en sí es primo, porque en caso contrario todo divisor propio de d dividiría también a y y sería más pequeño que d, que estaría en contradicción con la definición de d. (¿Ha observado el lector que la sentencia anterior es, en sí misma, una demostración por con-tradicción, anidada en el esquema general?) Por tanto, de acuerdo con nuestra suposición de que P contiene absolutamente todos los números primos, d pertenece a P. Esto demuestra que d es también divisor de x, puesto que x es el producto de una colección de enteros que contiene a d. Hemos llegado a la conclusión de que d divide exactamente tanto a x como a y. Pero se recordará que y = x + 1. Por tanto, hemos obtenido un entero d más grande que l y que divide a dos enteros consecutivos x e y. Esto es claramente imposible: si realmente d divide a x, entonces la división de y por d dejará necesariamente 1 como resto.
+
 ## TÉCNICA DE DEMOSTRACIÓN 2: INDUCCIÓN MATEMÁTICA
+
+Las herramientas matemáticas básicas útiles en la Algoritmia, quizá no haya ninguna más importante que la inducción matemática. No sólo nos permite demostrar propiedades interesantes acerca de la correccióniy eficiencia de los al-goritmos, sino que además veremos en la Sección 1.6.4 que puede incluso utilizarse para determinar qué propiedades es preciso probar.
+Antes de discutir la técnica, se ha de indicar una digresión acerca de la naturaleza del descubrimiento científico. En la ciencia hay dos enfoques opuestos fundamentales: inducción y deducción. De acuerdo con el Concise Oxford Dictio-nary, la inducción consiste en «inferir una ley general a partir de casos particu-lares», mientras que una deducción es una «inferencia de lo general a lo par-ticular». Veremos que, aun cuando la inducción puede dar lugar a conclusiones falsas, no se puede despreciar. La deducción, por otra parte, siempre es válida con tal de que sea aplicada correctamente.
+
 ### El principio de inducción matemática
+
+Considérese el algoritmo siguiente:
+función cuadrado (n)
+Si n = 0 entonces devolver 0
+Si no devolver 2n + cuadrado (n - 1) - 1 •
+Si se prueba con unas cuantas entradas pequeñas, se observa que:
+cuadrado (0) = 0, cuadrado (1) = 1, cuadrado (2) = 4, cuadrado (3) = 9, cuadrado (4) = 16
+Por inducción, parece evidente que cuadrado (n) = n' para todos los n ≥ 0, ¿pe-ro cómo podría demostrarse esto rigurosamente? ¿Será verdad? Diremos que el algoritmo tiene éxito sobre el entero n siempre que cuadrado (n) = n2 y que fracasa en caso contrario.
+Considérese cualquier entero n 2 1 y supóngase por el momento que el algoritmo tiene éxito en n -1. Por definición del algoritmo cuadrado (n) = 2n + cuadrado (n -1) -1. Por nuestra suposición cuadrado (n -1) = (n -1). Por tanto:
+cuadrado (n) = 2n + (n - 1)2 - 1 = 2n + (n2 - 2n + 1) - 1 = n2
+¿Qué es lo que hemos conseguido? Hemos demostrado que el algoritmo debe tener éxito en n siempre que tenga éxito en n - 1, siempre y cuando n ≥ 1.
+Además está claro que tiene éxito en n = 0.
+El principio de inducción matemática, que se describe más adelante, nos permite inferir a partir de lo anterior que el algoritmo tiene éxito en todos los n ≥ 0. Hay dos formas de comprender por qué se sigue esta conclusión: de forma constructiva y por contra-dicción.
+
 ### Un asunto completamente distinto
+
+En cada uno de estos dos nuevos conjuntos hay n- 1 caballos. Por tanto, la hipótesis de inducción es aplicable a ellos. En particular, todos los caballos de H, son del mismo color, digamos cy y todos los caballos de H, son también de un único (posiblemente distinto) co-lor, digamos c, Pero ¿es realmente posible que el color c, sea diferente del color c? Ciertamente no, el caballo h, pertenece a los dos conjuntos por tanto ambos, c, y c,, deben ser del mismo color que el de dicho caballo! Como todos los caballos de H pertenecen a cualquier
+H, o H, (o a ambos), concluimos que todos son del mismo color c = c, = G. Esto completa
+el paso de inducción y la demostración por inducción matemática.
+Antes de seguir adelante, encuentre la falacia de la «demostración» anterior.
+Si piensa que el problema es que nuestra hipótesis de inducción («todo conjunto de n- 1 caballos debe de contener solamente caballos de un mismo color») era
+absurda, ¡piénselo de nuevo!
+Solución: El problema es que «h, pertenece a ambos conjuntos» no es cierto para
+n = 2, ipuesto que h, no pertenece a H2! Nuestro razonamiento era impecable para
+los casos básicos n = 0 y n = 1. Además, es cierto que nuestro teorema es consecuencia válida para los conjuntos de n caballos, suponiendo que sea válido para n - 1, pero solamente cuando n ≥ 3. Podemos pasar de 2 a 3 y de 3 a 4, y así sucesivamente, pero no de 1 a 2. Dado que los casos básicos son únicamente 0 y 1, y puesto que no podemos pasar de 1 a 2, el paso de inducción no puede comenzar. Este pequeño eslabón perdido dentro de la demostración basta para hacerla completamente inadmi-sible. Encontramos una situación similar al demostrar que n' < 2": el paso de inducción no era aplicable para n < 5, y por tanto la veracidad de la afirmación para n = 0
+y p= anto alevante, la pife endis in votante en que de 2' es cierto para = 10.\
+
 ### Inducción matemática generalizada
+
+El principio de inducción matemática descrito hasta el momento es adecuado para de mostrar muchas afirmaciones interesantes. Existen algunos casos, sin embargo, en los cuales es preferible un principio algo más potente. Se conoce con el nombre de inducción matemática generalizada. La situación se ilustra mediante el ejemplo siguiente:
+Supongamos que se desea demostrar que todo entero compuesto se puede expresar como un producto de números primos. (El teorema fundamental de la aritmética nos dice que esta descomposición es única; esto no es lo que estamos intentando demostrar aquí.) No nos vamos a preocupar todavía por las bases de la inducción matemática, sino que vamos a saltar directamente al paso de induc-ción. Cuando se intenta demostrar que n se puede expresar como un producto de números primos (suponiendo que sea compuesto), la hipótesis de inducción «na-tural» sería que también se puede descomponer de esta manera n - 1. Sin em-bargo, desafiamos al lector a que encuentre algo en la descomposición de n - 1 en números primos que pueda ser útil o relevante para la descomposición de n en primos. Lo que se necesita realmente es una hipótesis de inducción más fuer-te, consistente en que todo número compuesto entero menor que n se puede descomponer en un producto de números primos. La demostración correcta de nuestro teorema se da más adelante como teorema 1.6.3, después de expresar formalmente el principio de inducción matemática generalizada.
+Otra generalización útil concierne a la base.
+
 ### Inducción constructiva
+
+La inducción matemática se utiliza sobre todo como técnica de demostración. Con harta frecuencia, se utiliza para demostrar afirmaciones que parecen haber surgido de la nada, como quien saca un conejo de un sombrero. Aunque la veracidad de tales afirmaciones queda comprobada, su origen sigue siendo un misterio. Sin embargo, la inducción matemática es una herramienta tan potente que nos permite no sólo descubrir meramente la veracidad de un teorema, sino también su enunciado exacto. Al aplicar la técnica de inducción constructiva que se describe en esta sección, puede uno demostrar simultáneamente la veracidad de una afirmación hecha de forma imprecisa y también descubrir las especificaciones omitidas, gracias a las cuales es correcta esa afirmación. Ilustraremos esta técnica mediante dos ejemplos que hacen uso de la sucesión de Fibonacci que se define más adelante. El segundo ejemplo muestra la forma en que esta técnica puede resultar útil para el análisis de algoritmos.
+
 ## RECORDATORIOS
+
+En esta sección recordamos al lector algunos resultados elementales acerca de lí-mites, sumas de series sencillas, combinatoria y probabilidad. Los capítulos posteriores utilizarán las proposiciones que se presentan aquí.
+
 ### Límites 
+
+Hay una definición parecida para fórmulas tales como -n ,
+', que pueden tomar
+valores negativos cada vez más grandes a medida que n tiende a infinito. Se dice que estas funciones tienden a menos infinito.
+Por último, cuando f(n) no tiende a un límite, ni tampoco a +∞ o -0o, diremos que f(n) oscila cuando n tiende a infinito. Si es posible encontrar una constante positiva K tal que -K < f(n) < K para todos los valores de n, diremos que f(n) oscila de forma finita; en caso contrario, f(n) oscila de forma infinita. Por ejemplo, la función (-1)" oscila de forma finita; la función (-1)"n oscila de forma infinita.
+Las proposiciones siguientes enuncian algunas de las propiedades generales.
+
 ### Series sencillas
+
+Hay una definición parecida para fórmulas tales como -n", que pueden tomar valores negativos cada vez más grandes a medida que n tiende a infinito. Se dice que estas funciones tienden a menos infinito.
+Por último, cuando f(n) no tiende a un límite, ni tampoco a +∞ o -∞, diremos que f(n) oscila cuando n tiende a infinito. Si es posible encontrar una constante positiva K tal que -K < f(n) < K para todos los valores de n,Idiremos que f(n) oscila de forma finita; en caso contrario, f(n) oscila de forma infinita. Por ejemplo, la función (-1)" oscila de forma finita; la función (-1)"n oscila de forma infinita.
+Las proposiciones siguientes enuncian algunas de las propiedades generales de
+los límites.
+
 ### Combinatoria básica
+
+En este caso diremos que la serie es convergente, y llamaremos a s la suma de la serie.
+Si por otra parte s, no tiende a un límite, sino que s, tiende a to o a -co, entonces diremos que la serie diverge, a too o quizá a -∞. Finalmente, si s, no tiende a un límite, ni a to ni a-co, entonces diremos que la serie oscila (de forma finita o quizá infinita). Es evidente que una serie que no tenga términos negativos debe de converger, o bien diverger, a +o: no podrá oscilar.
+Dos clases de series especialmente sencillas son las series aritméticas y las series geométricas.
+
 ### Probabilidad elemental
-## PROBLEMAS
+
+Supongamos que se tienen n objetos que son suficientemente distintos para que podamos reconocer cada uno: diremos que estos objetos son distinguibles. Para facilitar la exposición supongamos que están rotulados con las letras a, b, y así sucesivamente, teniendo cada objeto un rótulo distinto. De ahora en adelante aludiremos simplemente a a, por ejemplo, cuando queramos decir «el objeto cuyo rótulo es a».
+Nuestra primera definición concierne al número de formas en que se pueden
+ordenar estos n objetos.
 
 # ALGORITMIA ELEMENTAL Semana 2
 
@@ -180,7 +275,9 @@ es una función uniforme. (Este ejemplo no es tan artificial como pudiera parece
 Una propiedad útil de la uniformidad (ajuste o suavización) es que si f es b-uni-forme para algún entero concreto b ≥ 2, entonces, de hecho, es uniforme. Para demostrar esto, considérense dos enteros cualesquiera a y b mayores o iguales que 2 Supongamos que f es b-uniforme. Debemos demostrar que j es también a-uniforme.
 Sean c y no constantes tales que f (bil) ≤ c f (n) y f (1) ≤f (u + 1) para todo n ≥ 11o. Sea i = [log, al. Por definición del logaritmo, a = bosy ≤ blog = b Considérse cualquier n ≥ 0. Es fácil mostrar por inducción matemática sobre la b-uniformidad de f que f (b' n) ≤ c f (11). Pero f (an) ≤ f (b' n) (porque f es asintomáticamente no decreciente y b'n ≥ an ≥ no. Se sigue que f (an) ≤ô f (n) para ^ = c', y por tanto f es a-uniforme Las funciones uniformes son interesantes como consecuencia de la regla de la uniformidad (ajuste o suavidad). Sea f: 1 *→:2 una función suave y sea t:.. →. una función asintóticamente no decreciente. Considérese cualquier entero / ≥ 2.
 
-## NOTACIÓN ASINTÓTICA CON VARIOS PARÁMETROS
+## NOTACIÓN ASINTÓTICA CON VARIOS PARÁMETROS Semana 3
+
+Un aspecto importante de este libro es el que concierne a la determinación de l eficiencia de algoritmos. En la Sección 2.3, veíamos que este conocimiento puede ayudarnos, por ejemplo, a elegir uno de entre varios algoritmos en pugna. Recuérdese que deseamos determinar matemáticamente la cantidad de recursos que necesita el algoritmo como función del tamaño (o a veces del valor) de los casos con-siderados. Dado que no existe una computadora estándar con la cual se puedan comparar todas las medidas de tiempo de ejecución, vimos también en la Sección 2.3 que nos contentaremos con expresar el tiempo requerido por el algoritmo salvo por una constante multiplicativa. Con este objetivo, presentamos ahora formalmente la notación asintótica que se utiliza a lo largo de todo el libro. Además, esta nota permite realizar simplificaciones sustanciales aun cuando estemos interesado medir algo más tangible que el tiempo de ejecución, tal como el número de veces que se ejecuta una instrucción dada dentro de un programa.
 
 ## ANÁLISIS DE ALGORITMOS
 ### INTRODUCCIÓN
@@ -194,6 +291,7 @@ Resista la tentación de decir que el tiempo requerido por el bucle está en
 O(mt) con el pretexto de la notación © sólo tiene efecto más allá de algún umbral tal como m ≥ 1. El problema de este argumento es que si estamos realmente analizando todo un algoritmo y no simplemente el bucle para, entonces el umbral implícito en la notación © concierne a i, el tamaño del caso, y no a mi, el número de veces que pasamos por el bucle, y m = 0 podría suceder para valores arbitrariamente grandes de . Por otra parte, siempre y cuando t esté acotado inferiormente por alguna constante (lo cual siempre es cierto en la práctica), y siempre y cuando exista un umbral », tal que m ≥ 1 siempre que i1 2 11, el problema 4.3 pide demostrar que ‹ está ciertamente en ®(mt) cuando /, m y t se consideran como funciones de n.
 
 ### Secuencias
+
 ### Bucles "para" (desde).
 ### Llamadas recursivas
 ### Bucles "mientras" y "repetir"
