@@ -571,6 +571,36 @@ Retrotrayéndonos a la sección anterior, resulta descorazonador que una reducci
 ## ENFOQUES QUE APLICAN RECURSIÓN
 ## FUNCIONES CON MEMORIA
 
+# Talleres 
+
+![image](https://github.com/user-attachments/assets/90e2ac91-9a83-4bc7-ba8d-e2d795b7ef00)
+Proceso de Insertar 
+```
+para i ← 2 hasta n hacer
+    x ← T[i]; j ← i - 1
+    mientras j > 0 y x < T[j] hacer
+        T[j + 1] ← T[j]
+        j ← j - 1
+    T[j + 1] ← x
+```
+Proceso de Seleccionar 
+```
+para i ← 1 hasta n - 1 hacer
+    minj ← i; minx ← T[i]
+    para j ← i + 1 hasta n hacer
+        si T[j] < minx entonces
+            minj ← j
+            minx ← T[j]
+    T[minj] ← T[i]
+    T[i] ← minx
+```
+![image](https://github.com/user-attachments/assets/3aad2066-f822-48ef-bd4c-0c807249a16c)
+![image](https://github.com/user-attachments/assets/4126e990-80d5-4b37-b364-eca6df1f149e)
+
+
+
+
+
 ## Taller de pasarlo a java 
 public class MergeSort {
 
