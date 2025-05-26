@@ -679,9 +679,35 @@ public class Solucion {
 ![image](https://github.com/user-attachments/assets/95135ac6-5881-4245-ad2c-5afd4e721b04)
 ![image](https://github.com/user-attachments/assets/a1d5d9ba-01a4-4ab1-93c4-e21130eec051)
 ![image](https://github.com/user-attachments/assets/63fe586a-a397-42f5-9291-54ee043c7c25)
+## Codificar el algoritmo de Fibonacci
+```java
+public class FibonacciIterativo {
+    public static int fibonacci(int n) {
+        if (n <= 1) return n;
+        int a = 0, b = 1, temp;
+        for (int i = 2; i <= n; i++) {
+            temp = a + b;
+            a = b;
+            b = temp;
+        }
+        return b;
+    }
 
+    public static void main(String[] args) {
+        int n = 10;
+        System.out.println("Fibonacci de " + n + " es: " + fibonacci(n));
+    }
+}
+```
+## Identificar las recurrencias
+![image](https://github.com/user-attachments/assets/136b1f9e-5312-435a-8495-6bfa5d0ae78f)
+## Obtener la ecuacion general 
+![image](https://github.com/user-attachments/assets/f80a18ca-aba7-43cd-80ac-33f3caa5a6c0)
+## Demostrar 
+![image](https://github.com/user-attachments/assets/7a14feb6-e912-417e-a3cd-e485d3238333)
 ![image](https://github.com/user-attachments/assets/d79845db-8704-4c50-b642-9bbf13a433a7)
-
+![image](https://github.com/user-attachments/assets/9b102b9f-ed17-427f-bf9a-682c96f1c23a)
+![image](https://github.com/user-attachments/assets/62b6ca23-e2e1-44d3-b61a-966abd5200c2)
 
 
 
