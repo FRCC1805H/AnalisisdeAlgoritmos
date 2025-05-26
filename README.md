@@ -366,37 +366,144 @@ El último paso indispensable cuando se está analizando un algoritmo es frecuen
 
 ### Suposiciones inteligentes
 
+Este enfoque suele desarrollarse en cuatro etapas: calcular los primeros valores de la recurrencia, buscar una regularidad, inventar una forma general adecuada y demostrar finalmente por inducción matemática (quizá por inducción construc-tiva) que esta forma es correcta.
 
 ### Recurrencias homogéneas
+
+La situación se vuelve ligeramente más complicada cuando el polinomio característico tiene raíces múltiples, esto es, cuando las k raíces no son todas dife-rentes. Sigue siendo cierto que la Ecuación 4.8 satisface la recurrencia para valores cualesquiera de las constantes c, pero ésta ya no es la solución más general. Para hallar otras soluciones, sea p(x) = ax* + a,al + ... + a el polinomio característico de nuestra recurrencia, y sea r una raíz múltiple. Por definición de las rafces múl-
+tiples, existe un polinomio q(x), de grado k-2, tal que p(x) = (x-r)2g(x). Para todo n
+≥ k, considérense los polinomios de grado n.
+
 ### Recurrencias no homogéneas
+
+Siempre y cuando t, ≥ 0, una sencilla demostración por inducción matemática basada en la ecuación 4.11 muestra que t,≥ 0 para todo n ≥ 0. Por tanto, resulta inmediato a partir de la ecuación 4.14 que t, € O(3"): no hay necesidad de resolver para las constantes c, y C, con objeto de alcanzar esta conclusión. Sin embargo, esta ecuación no basta por si misma para concluir que t, € 0(3") porque a priori podría ser c, = 0. Sin embargo, resulta que el valor de c, se puede obtener directa-mente, sin necesidad de construir el sistema 4.15 de ecuaciones lineales. Esto basta para concluir que t, € ©(3") independientemente del valor de t, (aun cuando sea negativo).
+
 ### Cambios de variable
+
+A veces es posible resolver recurrencias más complicadas efectuando un cambio de variable. En los ejemplos siguientes, escribiremos T(n) para el término de una recurrencia general, y t, para el término de una nueva recurrencia obtenida a partir de la primera mediante un cambio de variable. Asegúrese de estudiar el Ejemplo 4.7.13, que se encuentra entre las recurrencias más importantes a efectos.
+
 ### Transformaciones de intervalo
-### Recurrencias asintóticas.
+
+Cuando se hace un cambio de variable, se transforma el dominio de la recu-rrencia. En lugar de hacer esto, puede resultar útil transformar el intervalo para obtener una recurrencia que tenga una forma que sepamos resolver. Ambas transde este enfoque.
+formaciones pueden utilizarse a la vez en algunas ocasiones.
+
+### Recurrencias asintóticas
+
+Este tipo de ecuación se denomina recurrencia asintótica. Afortunadamente, la solución asintótica de una recurrencia tal como la ecuación 4.36 es prácticamente siempre idéntica a la forma de la ecuación 4.35, más sencilla. La técnica general para resolver una recurrencia asintótica consiste en "emparedar" la función que define entre dos recurrencias del tipo más sencillo. Cuando las dos recurrencias más sencillas tienen la misma solución asin-tótica, la recurrencia asintótica debe de tener también la misma solución.
 
 ## ESTRUCTURAS DE DATOS Semana 5
+
+Sin embargo, este libro no pretende ser un manual de estructuras de datos. Suponemos que el lector ya posee buenos conocimientos prácticos de nociones tales como las matrices, los registros y los distintos tipos de datos estructurados que se obtienen empleando punteros. También suponemos que los conceptos matemáticos de grafos dirigidos y no dirigidos le resultan razonablemente familiares, y que el lector conoce la forma de representar eficientemente estos objetos en una computadora.
+
 ## MATRICES (ARRAYS), PILAS Y COLAS
+
+Desde el punto de vista que nos interesa en este libro, la propiedad esencial de una matriz es que podemos calcular la dirección de cualquier elemento dado en un tiempo constante. Por ejemplo, si sabemos que la matriz anterior tab comienza en la dirección 5000, y que las variables enteras ocupan 4 bytes de almacenamiento cada una, entonces la dirección del elemento cuyo índice es k está dada claramente por 4996 + 4k. Aun cuando pensemos que merece la pena comprobar que k se encuentra realmente entre 1 y 50, el tiempo necesario para calcular la dirección sigue estando acotado por una constante. Se sigue que el tiempo necesario para leer el valor de un solo elemento, o para cambiar ese valor, se encuentra en O(1); en otras palabras, podemos tratar estas operaciones como si fuesen elementales.
+Por otra parte, toda operación que implique a todos los elementos de una matriz tenderá a requerir más tiempo a medida que crezca el tamaño de la matriz. Supongamos que nos estamos enfrentando a una matriz de tamaño variable n; esto es, la matriz consta de i elementos. Entonces una operación tal como dar valor inicial a todos los elementos, o buscar el mayor elemento, va a requerir normalmente un tiempo que será proporcional al número de elementos que haya que examinar. En otras palabras, esas operaciones requieren un tiempo que está en O(i1).
+
 ## REGISTROS Y PUNTEROS (APUNTADORES)
+
+Del mismo modo que una matriz tiene un número fijo de elementos del mismo tipo, un registro es una estructura de datos que consta de un número fijo de elementos, que suelen llamarse campos en este contexto, y que son de tipos posiblemente distintos. Por ejemplo, si la información acerca de una persona que nos interesa consta de nombre, edad, peso y sexo, quizá necesitemos utilizar.
+
 ## LISTAS
+
+Las listas admiten un cierto número de operaciones: quizá sea necesario insertar un nodo adicional, borrar un nodo, copiar una lista, contar el número de elementos que contienen, y así sucesivamente. Las distintas implementaciones de computadora que se suelen utilizar difieren en la cantidad de espacio requerido, y en la facilidad para efectuar ciertas operaciones. Aquí nos contentaremos con mencionar las técnicas más conocidas.
+Implementada en forma de matriz mediante la declaración.
+
 ## GRAFOS
+
+Hablando intuitivamente, un grafo es un conjunto de nodos unidos por un conjunto de líneas o flechas. Considérese, por ejemplo, la figura 5.3. Distinguiremos entre grafos dirigidos y grafos no dirigidos. En los grafos dirigidos, los nodos están unidos mediante flechas llamadas aristas. En el ejemplo de la figura 5.3, existe una arista que va desde alfa hasta gamma, y otra desde gamma hasta alfa. Los nodos beta y delta, sin embargo, solo están unidos en la dirección indicada. En el caso de un grafo no dirigido, los nodos están unidos mediante líneas sin indicación de dirección, que también se llaman aristas. Tanto en los grafos dirigidos como en los no dirigidos, las secuencias de aristas pueden formar caminos y ciclos. Se dice que un grafo es conexo si se puede llegar desde cualquier nodo hasta cualquier otro siguiendo una secuencia de aristas; en el caso de un grafo dirigido, se permite circular en sentido inverso a lo largo de una flecha.
+
 ## ÁRBOLES
+
+El árbol con raíz que se muestra en la figura 5.5 se representaría tal como en la figura 5.7, en la cual las flechas muestran la dirección de los punteros empleados en la representación por computadora, y no la dirección de las aristas del árbol (que es, por supuesto, un grafo no dirigido.) Insistimos en que esta representación se puede utilizar para cualquier árbol con raíz; tiene la ventaja de que todos los nodos se pueden representar utilizando la misma estructura registro, independientemente del número de hijos y hermanos que posean. Sin embargo, hay muchas operaciones que resultan ineficientes cuando se emplea esta representación míni-ma: no resulta evidente la forma de hallar el padre de un nodo dado.
+
 ## TABLAS ASOCIATIVAS
+
+Una tabla asociativa es exactamente igual que una matriz, salvo que su índice no está restringido a encontrarse entre dos cotas predeterminadas. Por ejemplo, si T es una tabla, se puede utilizar 714] y después T[106) sin necesidad de reservar un millón de posiciones de almacenamiento para la tabla. Y aún hay algo mejor, se pueden utilizar cadenas en lugar de números como índice, así que T["Juan"] es tan legítimo como T[4]. Idealmente, una tabla no debería de ocupar mucho más espacio que el necesario para anotar los índices utilizados hasta el momento, junto al espacio para los valores almacenados en esas posiciones de la tabla.
+La comodidad de las tablas tiene su precio: a diferencia de las matrices, las tablas no se pueden implementar de tal manera que se garantice que todas las búsquedas requieran un tiempo constante.
+
 ## MONTÍCULOS (HEAPS) 
+
+Un montículo (heap) es un tipo especial de árbol con raíz que se puede implementar eficientemente en una matriz sin ningún puntero explícito. Esta estructura tan interesante se presta a numerosas aplicaciones, incluyendo una notable técnica de ordenación denominada ordenación por el método del montículo (heapsort), que se presentará más adelante en esta sección. También se puede utilizar para representar eficientemente ciertas listas dinámicas de prioridad, tales como la lista de sucesos en una simulación de una lista de tareas que haya de ser planificada por un sistema operativo.
+Se dice que un árbol binario es esencialmente completo si todo nodo interno, con la posible excepción de un nodo especial, tiene exactamente dos hijos. El nodo es-pecial, si existe uno, está situado en el nivel 1, y posee un hijo izquierdo pero no tiene hijo derecho. Además, o bien todas las hojas se encuentran en el nivel 0, á bien están en los niveles cero y uno, y ninguna hoja del nivel 1 está a la izquierda de un nodo interno del mismo nivel. Intuitivamente, un árbol esencialmente completo es uno en el que los nodos internos se han subido en el árbol lo más posible. con los nodos internos del último nivel empujados hacia la izquierda; las hojas llenan el último nivel que contiene nodos internos, si es que queda algún espacio, y después se desbordan hacia la izquierda en el nivel cero.
+
 ## MONTÍCULOS BINOMIALES
+
+En un montículo ordinario que contenga n elementos, buscar el mayor de ellos requiere un tiempo que está en O(1). Borrar el mayor elemento, o insertar un nuevo elemento, requiere un tiempo que está en O(log I). Sin embargo, fusionar dos montículos que contengan entre los dos it elementos requiere un tiempo que está en O(ii). En esta sección describiremos un tipo distinto de montículo, en el cual la búsqueda del mayor elemento sigue requiriendo un tiempo en O(1), y el borrado del mayor elemento sigue requiriendo un tiempo en Ollog i). Sin em-bargo, la fusión de dos de estos nuevos montículos sólo requiere un tiempo en O(log ), y la inserción de un nuevo elemento - siempre y cuando se considere el tiempo amortizado, y no el coste en si de cada operación- solamente requiere un tiempo en O(1).
+Definiremos primero los árboles binomiales. El i-ésimo árbol binomial B, con i ≥ 0, se define recursivamente como aquel que consta de un nodo raíz con i hi-jos, en donde el j-ésimo hijo, 1 ≤ j <i, es a su vez la raíz de un árbol binomial
+B, La figura 5.17 muestra desde B, hasta B. Es fácil mostrar por inducción matemática que el árbol binomial B, contiene 2' nodos, de los cuales están a una profundidad k, 0 ≤ k Si. Aqui; es el coeficiente binomial definido en la Sección 1.7.3. Esta es, por supuesto, la razón del nombre a los árboles binomiales.
+Suponemos que todo nodo de estos árboles puede almacenar un valor. Dado que los nodos poseen un número variable de hijos, lo más probable es que la mejor manera de representarlos en una computadora sea utilizar.
+
 ## ESTRUCTURAS DE CONJUNTOS DISJUNTOS (PARTICIÓN)
 
+Supongamos que vamos a ejecutar una secuencia arbitraria de operaciones de los tipos buscar y fusionar, comenzando a partir de la situación inicial. No sabemos precisamente el orden en que se van a producir estas operaciones. Sin embargo, habrá n del tipo buscar, y no habrá más de N-1 del tipo fusionar, porque al cabo de N-1 operaciones fusionar todos los objetos están en el mismo conjunto. Además, en muchas aplicaciones, n es comparable con N. Si la consulta o modificación de un elemento cuenta como una operación elemental, entonces está claro que buscarl requiere un tiempo constante, y que fusionarl requiere un tiempo que está en ©(N). Las n operaciones buscar, por tanto, requieren un tiempo en 0(7), mientras que las N-1 operaciones fusionar requieren un tiempo que está en O(N?). Si n y N son comparables, entonces toda la secuencia de operaciones requiere un tiempo que se encuentra en 0(12).
+Intentemos hacerlo mejor. Sin dejar de utilizar una sola matriz, podemos representar cada conjunto como un árbol con raíz, en el cual cada nodo contiene un único puntero que apunta a su padre (tal como en el tipo nodoárbol2 de la Sección 5.5).
+Adoptamos el convenio siguiente: si conjuntoli] = i, entonces i es a la vez el rótulo de su conjunto y la raíz del árbol correspondiente; si conjuntolil = j# i, entonces j es el padre de i en algún árbol.
+
 ## ALGORIIMOS VORACES Semana 6
+
+Los algoritmos voraces se utilizan típicamente para resolver problemas de op-timización. Los ejemplos posteriores de este capítulo incluyen la búsqueda de la ruta más corta para ir desde un nodo a otro a través de una red de trabajo o la búsqueda del mejor orden para ejecutar un conjunto de tareas en una computadora.
+En tales contextos, un algoritmo voraz funciona seleccionando el arco, o la tarea, que parezca más prometedora en un determinado instante; nunca reconsidera su decisión, sea cual fuere la situación que pudiera surgir más adelante. No hay necesidad de evaluar alternativas, ni de emplear sofisticados procedimientos de seguimiento que permitan deshacer las decisiones anteriores. Comenzaremos este capítulo con un ejemplo cotidiano en el que esta táctica funciona bien.
+
 ### DAR LA VUELTA (1) 
+
+Los algoritmos voraces se utilizan típicamente para resolver problemas de op-timización. Los ejemplos posteriores de este capítulo incluyen la búsqueda de la ruta más corta para ir desde un nodo a otro a través de una red de trabajo o la búsqueda del mejor orden para ejecutar un conjunto de tareas en una computadora.
+En tales contextos, un algoritmo voraz funciona seleccionando el arco, o la tarea, que parezca más prometedora en un determinado instante; nunca reconsidera su decisión, sea cual fuere la situación que pudiera surgir más adelante. No hay necesidad de evaluar alternativas, ni de emplear sofisticados procedimientos de seguimiento que permitan deshacer las decisiones anteriores. Comenzaremos este capítulo con un ejemplo cotidiano en el que esta táctica funciona bien.
+
 ### CARACTERÍSTICAS GENERALES DE LOS ALGORITMOS VORACES
+
+A medida que avanza el algoritmo, vamos acumulando dos conjuntos. Uno contiene candidatos que ya han sido considerados y seleccionados, mientras que el otro contiene candidatos que han sido considerados y rechazados.
+Existe una función que comprueba si un cierto conjunto de candidatos constituye una solución de nuestro problema, ignorando si es o no óptima por el mo-mento. Por ejemplo, ¿suman las monedas seleccionadas la cantidad que hay que pagar? ¿Proporcionan las aristas seleccionadas una ruta hasta el nodo que deseamos alcanzar? ¿Están planificadas todas las tareas?
+Hay una segunda función que comprueba si un cierto conjunto de candidatos es factible, esto es, si es posible o no completar el conjunto añadiendo otros candidatos para obtener al menos una solución de nuestro problema. Una vez más, no nos preocupa aquí si esto es óptimo o no. Normalmente, se espera que el problema tenga al menos una solución que sea posible obtener empleando candidatos del conjunto que estaba disponible inicialmente.
+Hay otra función más, la función de selección, que indica en cualquier momento cuál es el más prometedor de los candidatos restantes, que no han sido seleccionados ni rechazados.
+Por último, existe una función objetivo que da el valor de la solución que hemos hallado: el número de monedas utilizadas para dar la vuelta, la longitud de la ruta que hemos construido, el tiempo necesario para procesar todas las tareas de la planificación, o cualquier otro valor que estemos intentando optimizar. A diferencia de las tres funciones mencionadas anteriormente, la función objetiva no aparece explícitamente en el algoritmo voraz.
+
 ### GRAFOS: ÁRBOLES DE RECUBRIMIENTO MÍNIMO
+
+Sea G = (N, A) un grafo conexo no dirigido en donde N es el conjunto de nodos y
+A es el conjunto de aristas. Cada arista posee una longitud no negativa. El problema consiste en hallar un subconjunto T de las aristas de G tal que utilizando solamente las aristas de T, todos los nodos deben quedar conectados, y además la suma de las longitudes de las aristas de T debe ser tan pequeña como sea posible.
+Dado que G es conexo, debe existir al menos una solución. Si G tiene aristas de longitud 0, pueden existir varias soluciones cuya longitud total sea la misma, pero que tengan números distintos de aristas. En este caso, dadas dos soluciones de igual longitud total, preferimos la que contenga menos aristas. Incluso con esta condición el problema puede tener varias soluciones diferentes y de igual valor.
+En lugar de hablar de las longitudes, podemos asóciar un coste a cada arista. El problema, entonces, consiste en hallar un subconjunto T de las aristas cuyo coste total sea el menor posible.
+
 ### Algoritmo de Kruskal
+
+El conjunto de aristas T está vacío inicialmente. A medida que progresa el algo-ritmo, se van añadiendo aristas a T. Mientras no haya encontrado una solución, el grafo parcial formado por los nodos de G y las aristas de T consta de varios componentes conexos. (Inicialmente, cuando T está vacío, cada nodo de G forma una componente conexa distinta trivial) Los elementos de T que se incluven en una componente conexa dada forman un árbol de recubrimiento mínimo para los nodos de esta componente. Al final del algoritmo, sólo queda una componente cone-xa, así que T es un árbol de recubrimiento mínimo para todos los nodos de G.
+Para construir componentes conexas más y más grandes, examinamos las aristas de G por orden creciente de longitudes.
+
 ### Algoritmo de Prim
+
+Se vio anteriormente que el algoritmo de Kruskal requiere un tiempo que está en ©(a log i1), en donde a es el número de aristas que hay en el grafo. Para un grafo denso, a tiende a n(n - 1)/2. En este caso, el algoritmo de Kruskal requiere un tiempo que se encuentra en 0(nlog n), y el algoritmo de Prim puede ser mejor. Para un grafo disperso, a tiende a n. En este caso, el algoritmo de Kruskal requiere un tiempo que está en (n log n), y el algoritmo de Prim, tal como se ha presentado aquí, es probablemente menos eficiente. Sin embargo, el algoritmo de Prim, al igual que el de Kruskal, se puede implementar utilizando montículos. En este caso —una vez más, como el algoritmo de Kruskal— requiere un tiempo que está en ©(a log n). Existen otros algoritmos más eficientes que el de Prim o el de Kruskal.
+
 ## GRAFOS: CAMINOS MÍNIMOS
+
+Considere ahora un grafo dirigido G = (N, A) en donde N es el conjunto de nodos
+de G, y A es el conjunto de aristas dirigidas. Cada arista posee una longitud no ne-gativa. Se toma uno de los nodos como nodo origen. El problema consiste en determinar la longitud del camino mínimo que va desde el origen hasta cada uno de todos los demás nodos del grafo. Tal como sucedía en la Sección 6.3, podríamos hablar igualmente bien acerca del coste de una arista, en lugar de mencionar su longitud, y se podría plantear el problema consistente en determinar la ruta más barata desde el origen hasta cada uno de todos los demás nodos.
+Este problema se puede resolver mediante un algoritmo voraz que recibe frecuentemente el nombre de algoritmo de Dijkstra. El algoritmo utiliza dos conjuntos de nodos, S y C. En todo momento, el conjunto § contiene aquellos nodos que ya han sido seleccionados; como veremos, la distancia mínima desde el origen ya es conocida para todos los nodos de S. El conjunto C contiene todos los demás nodos, cuya distancia mínima desde el origen todavía no es co-nocida, y que son candidatos a ser seleccionados en alguna etapa posterior. Por
+tanto, tenemos la propiedad invariante N = SU C. En un primer momento, S
+contiene nada más el origen en sí; cuando se detiene el algoritmo, S contiene todos los nodos del grafo y nuestro problema está resuelto. En cada paso seleccionamos aquel nodo de C cuya distancia al origen sea mínima.
+
 ## EL PROBLEMA DE LA MOCHILA (I)
+
+Nuestro objetivo es llenar la mochila de tal manera que se maximice el valor de los objetos transportados, respetando la limitación de capacidad impuesta.
+En esta primera versión del problema, suponemos que se pueden romper los objetos en trozos más pequeños, de Imanera que podamos decidir llevar solamente una fracción x, del objeto i, con 0 ≤ x, ≤ 1. (Si no se nos permite romper los objetos, el problema es mucho más difícil.) En este caso, el objeto i contribuye en x,u, al peso total de la mochila, y en x,o, al valor de la carga.
+
 ## PLANIFICACIÓN 
+
+En esta sección presentamos dos problemas que conciernen a la forma óptima de planificar tareas en una sola máquina. En el primero, el problema consiste en minimizar el tiempo medio que invierte cada tarea en el sistema. En el segundo, las tareas tienen un plazo fijo de ejecución, y cada tarea aporta unos ciertos beneficios sólo si está acabada al llegar su plazo: nuestro objetivo es maximizar la rentabili-dad. Ambos problemas se pueden resolver empleando algoritmos voraces.
+
 ### Minimización del tiempo del sistema
+
+Un único servidor, como por ejemplo un procesador, un surtidor de gasolina, o un cajero de un banco, tiene que dar servicio a n clientes. El tiempo requerido por cada cliente se conoce de antemano: el cliente i requerirá un tiempo t, para 1 si s n.
+Deseamos minimizar el tiempo medio invertido por cada cliente en el sistema. Dado que el número n de clientes está predeterminado, esto equivale a minimizar el tiempo total invertido en el sistema por todos los clientes. En otras palabras, deseamos minimizar.
+
 ### Planificación con plazo fijo
 
+Se dice que un conjunto de tareas es factible si existe al menos una sucesión (que también se llama factible) que permite que todas las tareas del conjunto se ejecuten antes de sus respectivos plazos. Un algoritmo voraz evidente consiste en construir la planificación paso a paso, añadiendo en cada paso la tarea que tenga el mayor valor de g, entre las que aún no se hayan considerado, siempre y cuando el conjunto de tareas seleccionadas siga siendo factible.
+En el ejemplo precedente seleccionamos en primer lugar la tarea 1. Después tomamos la tarea 4; el conjunto (1, 4) es factible porque se puede ejecutar en el orden 4, 1. A continuación probamos el conjunto (1, 3, 4), que resulta no ser factible; por tanto se rechaza la tarea 3. Per último, probamos (1, 2, 4), que tampoco es fac-tible, así que se rechaza la tarea 2. Nuestra solución (que en este caso es óptima) es por tanto ejecutar el conjunto de tareas (1, 4), que sólo se puede efectuar en el orden 4, 1. Queda por demostrar que este algoritmo siempre encuentra una planificación óptima, y además hay que buscar una forma eficiente de implementarlo.
+
 ## DIVIDE Y VENCERÁS Semana 7
+
+
 ## INTRODUCCIÓN: MULTIPLICACIÓN DE ENTEROS MUY GRANDES
 ## EL CASO GENERAL
 ## BÚSQUEDA BINARIA
