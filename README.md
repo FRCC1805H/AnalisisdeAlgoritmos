@@ -503,12 +503,33 @@ En el ejemplo precedente seleccionamos en primer lugar la tarea 1. Después toma
 
 ## DIVIDE Y VENCERÁS Semana 7
 
+Divide y vencerás es una técnica para diseñar algoritmos que consiste en descomponer el caso que haya que resolver en un cierto número de subcasos más pequeños del mismo problema, resolver sucesiva e independientemente todos estos subcasos, y combinar después las soluciones obtenidas de esta manera para obtener la solución del caso original. Las dos preguntas que surgen de modo natural son: ¿por qué querría nadie hacer esto? y ¿cómo se resuelven los subcasos? La eficiencia de la técnica de divide y vencerás se debe a la respuesta a esta última pregunta.
 
 ## INTRODUCCIÓN: MULTIPLICACIÓN DE ENTEROS MUY GRANDES
+
+Consideremos una vez más el problema de multiplicar enteros muy grandes.
+Recordemos que el algoritmo clásico (figura 1.1) que aprendemos en la escuela requiere un tiempo en ©(n*) para multiplicar números de i cifras. Estamos tan acostumbrados a este algoritmo que quizá nunca haya tenido dudas acerca de su op-timalidad. ¿Podemos hacerlo mejor? La multiplicación à la russe (figura 1.2) no ofrece mejoras del tiempo de ejecución.
+Lamentablemente, el algoritmo resultante no proporciona
+ninguna mejora con respecto al algoritmo clásico de multiplicación, a no ser que seamos más inteligentes. Para superar al algoritmo clásico, debemos encontrar una forma de reducir la multiplicación original no a cuatro sino a tres multiplicaciones de números de tamaño mitad.
+
 ## EL CASO GENERAL
+
+Algunos algoritmos de divide y vencerás no siguen exactamente este esquema: por ejemplo, pueden necesitar que el primer subejemplar esté resuelto antes de formular el segundo subejemplar; véase la Sección 7.5.
+El número de subejemplares, ', suele ser pequeño e independiente del caso particular que haya que resolver. Cuando / = 1, no tiene mucho sentido «des-componer x en un caso más sencillo x,», y es difícil justificar el nombre de divide y vencerás que se le da a esta técnica. Sin embargo, tiene sentido reducir la resolución de un caso muy grande a la de uno más pequeño. Entonces, divide y vencerás recibe el nombre de reducción (simplificación); véanse las Secciones 7.3 y 7.7. Cuando se utiliza la simplificación, a veces es posible sustituir la recursi-vidad inherente a divide y vencerás por un bucle iterativo. Cuando se implementa en un lenguaje convencional como Pascal y en una máquina convencional que utilice un compilador poco sofisticado, un algoritmo iterativo tiene probabilidades de ser más rápido que la versión recursiva, aunque sólo por una constante multiplicativa. Por otra parte, puede ser posible ahorrar una cantidad considerable de memoria de esta manera: para un caso de tamaño it, el algoritmo recursivo utiliza una pila cuyo tamaño está en S2(lg n), y en casos ma-
+los incluso en (n).
+
 ## BÚSQUEDA BINARIA
+
+La búsqueda binaria precedió a las computadoras. En esencia, es el algoritmo que se emplea para buscar una palabra en un diccionario, o un nombre en un directorio telefónico. Probablemente se trate de la aplicación más sencilla de divide y vencerás, tan sencilla que hablando con propiedad esto es una aplicación de reducción (simplificación) más que de divide y vencerás: la solución de todo caso suficientemente grande se reduce a un caso más pequeño, en este caso de tamaño mitad.
+Sea T[1...] una matriz ordenada por orden no decreciente; esto es, T(i] ≤ TU] siempre que sea 1s is js n. Sea x un elemento. El problema consiste en buscar x en la matriz T, si es que está. Formalmente, deseamos encontrar el índice i tal que 1 sisn + 1 y T[i - 1] < x ≤ T[], con la convención lógica consistente en que T[0] = -∞o y T[n + 1] = +o (al decir convenio lógico queremos indicar que estos valores no están realmente presentes en la matriz). La aproximación evidente para este problema consiste en examinar secuencialmente todos los elementos de T, hasta que o bien lleguemos al final de la matriz, o bien encontremos un elemento que no sea menor que x.
+
 ## ORDENACIÓN 
+
+Sea T|l.n| una matriz de n elementos. Nuestro problema es ordenar estos elementos por orden ascendente. Ya hemos visto que el problema se puede resolver mediante ordenación por selección y ordenación por inserción (Sección 2.4), o bien mediante ordenación por montículo (Reapsort) (Sección 5.7). Recordemos que el análisis en los casos peor y promedio muestra que este último método requiere un tiempo que está en O(1 log n), mientras que los dos métodos anteriores requieren un tiempo cuadrático. Hay varios algoritmos clásicos de ordenación que siguen el esquema de divide y vencerás. Es interesante observar lo diferentes que son: aun habiendo decidido resolver un problema por divide vencerás, disponemos de amplio margen de maniobra para nuestra creativi-dad. Estudiaremos ahora dos de ellos —ordenar por fusión (mergesort) y ordenación rápida.
+
 ### Ordenación por fusión
+
+
 ### Ordenación rápida (Quicksort)
 ## BÚSQUEDA DE LA MEDIANA
 ## MULTIPLICACIÓN DE MATRICES
