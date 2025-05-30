@@ -601,6 +601,8 @@ para i ← 1 hasta n - 1 hacer
 ![image](https://github.com/user-attachments/assets/63592516-de95-4e9a-83a1-a2503a20f581)
 
 ## Taller de pasarlo a java 
+![image](https://github.com/user-attachments/assets/ff9e9db8-0400-4006-9da6-45611e6d8050)
+
 public class MergeSort {
 
     public static void mergeSort(int[] A, int p, int r) {
@@ -660,6 +662,8 @@ public class MergeSort {
 ![image](https://github.com/user-attachments/assets/b242a124-0e28-4bf3-8c45-7c7d249fc16a)
 ![image](https://github.com/user-attachments/assets/0c99e59a-7302-4837-b6e7-72433bfdc642)
 ![image](https://github.com/user-attachments/assets/c76fdf1c-83ed-4acd-90df-6edbabd75a64)
+![image](https://github.com/user-attachments/assets/1184e68a-d874-4988-a048-079c9c0f03e0)
+
 ```java
 public class Solucion {
     public static void main(String[] args) {
