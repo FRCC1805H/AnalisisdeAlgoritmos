@@ -680,6 +680,8 @@ public class Solucion {
 ![image](https://github.com/user-attachments/assets/a1d5d9ba-01a4-4ab1-93c4-e21130eec051)
 ![image](https://github.com/user-attachments/assets/63fe586a-a397-42f5-9291-54ee043c7c25)
 ## Codificar el algoritmo de Fibonacci
+![image](https://github.com/user-attachments/assets/e5d5367a-130f-4909-b591-b838ac320c4c)
+
 ```java
 public class FibonacciIterativo {
     public static int fibonacci(int n) {
