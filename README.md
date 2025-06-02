@@ -717,3 +717,18 @@ public class FibonacciIterativo {
 
 
 
+# Bimestre 2 
+## Semana 9 
+## Algotimos Volares 
+Un algoritmo voraz es un tipo de estrategia algorítmica que construye una solución paso a paso, eligiendo en cada paso la opción que parece ser la mejor en ese momento, sin reconsiderar decisiones anteriores.
+-Es decir, toma decisiones locales óptimas esperando que conduzcan a una solución global óptima.
+S(suma Actual	x	s + x	S(conjunto )
+0	25	25	{25}
+25	25	50	{25,25}
+50	10	60	{25,25,10}
+
+![image](https://github.com/user-attachments/assets/dab2dfb2-2218-4ebd-b9f3-1385203c3750)
+
+
+
+
