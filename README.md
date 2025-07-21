@@ -707,6 +707,29 @@ public class FibonacciIterativo {
 
 # Bimestre 2 
 
+# 5.	Divide y vencerás
+09 81	12 34 w  x	y  z
+981×1234 =  10!𝑤+𝑥 × 10!𝑦+𝑧
+= 10"𝑤𝑦+ 10! 𝑤𝑧+𝑥𝑦+𝑥𝑧
+¿Es posible obtener wz + xy a costa de una sola multiplicación?
+Considere el producto
+𝑟 =  𝑤+𝑥 × 𝑦+𝑧  = 𝑤𝑦+  𝑤𝑧+𝑥𝑦  +𝑥𝑧
+𝑝 = 𝑤𝑦 = 09∗12 = 108
+𝑞 = 𝑥𝑧 = 81*34 = 2754
+𝑟 = (𝑤+𝑥)(𝑦+𝑧) = 90*46 = 4140
+Finalmente
+= 10"𝑤𝑦+ 10! 𝑤𝑧+𝑥𝑦+𝑥𝑧
+981×1234 = 10"𝑝+ 10! 𝑟−𝑝−𝑞+𝑞
+981×1234 = 10"(108)+ 10! 4140−108−2754  +2754
+= 1210554
+<img width="651" height="238" alt="image" src="https://github.com/user-attachments/assets/b2f18b90-60a0-4b8d-9aa9-e519b2b8e91f" />
+
+# Busqueda Binaria 
+<img width="1110" height="577" alt="image" src="https://github.com/user-attachments/assets/596a3c6e-cff0-48e7-b28f-b208d948120a" />
+
+<img width="534" height="256" alt="image" src="https://github.com/user-attachments/assets/d98fe840-5265-45c4-b87e-3c711caba631" />
+
+
 # 	Algoritmos voraces
 
 Poseen una implementación ágil y de baja complejidad computacional.
@@ -773,11 +796,40 @@ E es un conjunto de pares de vértices, conocidos como aristas (o enlaces), que 
 
 Dependiendo del contexto, las aristas pueden tener pesos asociados, que representan costos, distancias o capacidades.
 
-## Taller Semana 9
+<img width="1049" height="603" alt="image" src="https://github.com/user-attachments/assets/85e92f81-4dad-4db6-a355-e4e419f94356" />
+
+<img width="1031" height="716" alt="image" src="https://github.com/user-attachments/assets/2763a060-3227-4a06-8c58-33f2573f07e5" />
+
+<img width="1168" height="701" alt="image" src="https://github.com/user-attachments/assets/3ae31388-c878-48bd-8958-ffc5c3325021" />
+
+<img width="907" height="684" alt="image" src="https://github.com/user-attachments/assets/feb5a5d4-e74e-421a-8b45-1974fa024600" />
+
+<img width="1091" height="718" alt="image" src="https://github.com/user-attachments/assets/6ff615cf-a787-4c96-b076-263b13f7905b" />
+
+<img width="982" height="709" alt="image" src="https://github.com/user-attachments/assets/e5a0a93a-244e-4796-bd58-d5c6dc97e734" />
+
+## Árbol de recubrimiento mínimo
+
+<img width="954" height="607" alt="image" src="https://github.com/user-attachments/assets/5cbf7d1b-e7e8-411f-92b4-0f97492e29d1" />
+
+<img width="1040" height="674" alt="image" src="https://github.com/user-attachments/assets/3ccf6c14-2125-4dcf-af36-8f14d4329c16" />
+
+## Algoritmo de Kruskall
+
+<img width="1414" height="459" alt="image" src="https://github.com/user-attachments/assets/e8505ff2-0d7b-4c61-a967-adfb2cdea069" />
+
+<img width="1561" height="649" alt="image" src="https://github.com/user-attachments/assets/3f70e25f-00ae-4bbf-a256-b5163e13d24d" />
+
+<img width="1651" height="670" alt="image" src="https://github.com/user-attachments/assets/8ff3b53f-ca79-4ad5-af0f-e31c17252790" />
+
+<img width="1275" height="492" alt="image" src="https://github.com/user-attachments/assets/e691b819-d2b8-413c-841a-c7df2c4146de" />
+
+
+## Taller 
 ![Imagen de WhatsApp 2025-06-23 a las 10 45 43_1ccea423](https://github.com/user-attachments/assets/6b48db33-a4e9-4b97-bd7a-042c7312bf9b)
 ![Imagen de WhatsApp 2025-06-23 a las 10 45 43_1db9e59e](https://github.com/user-attachments/assets/28cd0ebe-d7f8-4081-a5d8-ab8cf3e0071b)
 
-### Taller Semana 10 
+### Taller 
 Un algoritmo voraz es un tipo de estrategia algorítmica que construye una solución paso a paso, eligiendo en cada paso la opción que parece ser la mejor en ese momento, sin reconsiderar decisiones anteriores.
 -Es decir, toma decisiones locales óptimas esperando que conduzcan a una solución global óptima.
 S(suma Actual	x	s + x	S(conjunto )
@@ -787,7 +839,7 @@ S(suma Actual	x	s + x	S(conjunto )
 
 ![image](https://github.com/user-attachments/assets/dab2dfb2-2218-4ebd-b9f3-1385203c3750)
 
-Taller semana 11 
+Taller 
 ![image](https://github.com/user-attachments/assets/36b0ec14-cf41-4aeb-8631-d73407c62943)
 
 
