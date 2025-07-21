@@ -707,7 +707,7 @@ public class FibonacciIterativo {
 
 # Bimestre 2 
 
-# 5.	Divide y vencerás
+# 	Divide y vencerás
 09 81	12 34 w  x	y  z
 981×1234 =  10!𝑤+𝑥 × 10!𝑦+𝑧
 = 10"𝑤𝑦+ 10! 𝑤𝑧+𝑥𝑦+𝑥𝑧
@@ -743,6 +743,7 @@ Finalmente
 
 <img width="557" height="298" alt="image" src="https://github.com/user-attachments/assets/b53e6cb4-34a9-43fe-a14a-ea51989a4ced" />
 
+# Ordenación rápida (Quicksort)
 <img width="619" height="170" alt="image" src="https://github.com/user-attachments/assets/3af48be1-6804-4368-8d20-073a2f1b0b70" />
 
 <img width="1288" height="724" alt="image" src="https://github.com/user-attachments/assets/aafc2d9a-370f-4ef9-85f6-b9fe73034aaf" />
@@ -753,10 +754,19 @@ Finalmente
 
 <img width="1460" height="690" alt="image" src="https://github.com/user-attachments/assets/15e66486-e25b-41e4-bb1c-2a359518c8d0" />
 
-# Ordenación rápida (Quicksort)
 <img width="616" height="248" alt="image" src="https://github.com/user-attachments/assets/da1889df-0148-4bc2-9300-29187c58a58e" />
 
 <img width="645" height="254" alt="image" src="https://github.com/user-attachments/assets/7efa5baf-fa4d-4ca8-8c46-ab0547b55b3e" />
+
+<img width="595" height="105" alt="image" src="https://github.com/user-attachments/assets/ecb436db-aba5-4632-b467-0e415bdb408e" />
+
+<img width="950" height="699" alt="image" src="https://github.com/user-attachments/assets/73b5b8b4-bc64-4cc0-b0b2-06effaad3608" />
+
+<img width="1086" height="463" alt="image" src="https://github.com/user-attachments/assets/84c15645-a6ed-41a6-8ada-6a6f6ebec037" />
+
+<img width="509" height="224" alt="image" src="https://github.com/user-attachments/assets/2c35acbe-08c2-4670-aac8-cc255d8a7f0c" />
+
+<img width="1631" height="657" alt="image" src="https://github.com/user-attachments/assets/24a97ec7-cbfc-41a0-b7b2-dd0615d71f6d" />
 
 
 # 	Algoritmos voraces
@@ -853,6 +863,166 @@ Dependiendo del contexto, las aristas pueden tener pesos asociados, que represen
 
 <img width="1275" height="492" alt="image" src="https://github.com/user-attachments/assets/e691b819-d2b8-413c-841a-c7df2c4146de" />
 
+# Algoritmos y Probabilidades 
+Existe un tesoro con una cantidad desconocida pero fija de 
+𝑥
+x lingotes de oro, ubicado en el punto A o B, pero no se conoce su ubicación exacta.
+
+Desplazarse desde el punto actual (O) hacia A o B toma 5 días, y cada noche un dragón sustrae 
+𝑦
+y lingotes de oro del tesoro.
+
+Si permaneces 4 días adicionales en el punto de partida (O), podrás determinar con certeza la ubicación del tesoro mediante análisis computacional.
+
+Un elfo ofrece revelar de inmediato la ubicación del tesoro a cambio de una cantidad equivalente a lo que el dragón tomaría en 3 noches, es decir, 
+3
+𝑦
+3y lingotes de oro.
+
+<img width="228" height="308" alt="image" src="https://github.com/user-attachments/assets/8fe0885f-2bb8-4169-a706-de6a043982e5" />
+
+## ¿Cuál es?
+Se puede aplicar un algoritmo probabilístico, específicamente una estrategia de decisión aleatoria, como sigue:
+
+Utilizar una moneda (simulación de una variable aleatoria uniforme) para decidir aleatoriamente a cuál de los dos posibles destinos (A o B) ir primero, dado que ambos tienen la misma probabilidad a priori de contener el tesoro.
+
+## Análisis de Resultados Posibles:
+Caso favorable (50% de probabilidad):
+Se acierta en la primera elección → el tesoro es hallado inmediatamente.
+→ Se pierden 5 días de viaje → el dragón sustrae 
+5
+𝑦
+5y lingotes.
+Ganancia: 
+𝑥
+−
+5
+𝑦
+x−5y
+
+## Caso desfavorable (50% de probabilidad):
+Se erra en la primera elección → se requiere viajar al segundo destino.
+→ Se pierden 10 días en total (5 de ida al lugar incorrecto + 5 al correcto).
+→ El dragón sustrae 
+10
+𝑦
+10y lingotes.
+Ganancia: 
+𝑥
+−
+10
+𝑦
+x−10y
+
+Valor Esperado del Beneficio (Esperanza Matemática):
+𝐸
+[
+𝐺
+𝑎
+𝑛
+𝑎
+𝑛
+𝑐
+𝑖
+𝑎
+]
+=
+0.5
+(
+𝑥
+−
+5
+𝑦
+)
++
+0.5
+(
+𝑥
+−
+10
+𝑦
+)
+=
+𝑥
+−
+7.5
+𝑦
+E[Ganancia]=0.5(x−5y)+0.5(x−10y)=x−7.5y
+
+# Contextualización Algorítmica:
+Este enfoque pertenece al ámbito de los algoritmos probabilísticos o estrategias basadas en valor esperado, donde se toman decisiones bajo incertidumbre evaluando el riesgo y beneficio esperado de cada acción.
+
+-Se trata de una heurística estocástica, útil cuando:
+-El costo de obtener información adicional es alto (como esperar 4 días o  pagar al elfo).
+-Y cuando el resultado de una acción tiene distribución probabilística conocida.
+
+## Terminación y Corrección
+Un algoritmo determinista debe garantizar:
+
+Terminación en tiempo finito para cualquier entrada válida (no puede entrar en bucles infinitos ni provocar errores como divisiones por cero).
+
+Corrección total, es decir, debe generar siempre una solución correcta para cualquier entrada dentro del dominio del problema.
+
+Un algoritmo probabilístico (o aleatorizado) puede:
+
+No garantizar la terminación en todos los casos, siempre que la probabilidad de fallo sea suficientemente baja.
+
+En tales casos, el algoritmo puede abortar la ejecución y reintentarse con la misma entrada.
+
+Permitir cierto margen de error en la solución, siempre y cuando la probabilidad de error sea acotada por un valor suficientemente pequeño.
+
+Mediante repetición independiente del algoritmo sobre la misma entrada, se puede reducir la probabilidad de error hasta niveles arbitrariamente pequeños (por ejemplo, usando amplificación de probabilidad).
+
+## Determinismo vs Aleatoriedad en la Solución
+Un algoritmo determinista genera siempre la misma salida para una entrada dada (a menos que esté diseñado específicamente para producir múltiples soluciones).
+
+Un algoritmo probabilístico puede producir resultados distintos en diferentes ejecuciones con la misma entrada, debido al uso de elecciones aleatorias internas.
+
+## Análisis de Eficiencia
+El análisis de complejidad temporal de algoritmos deterministas puede ser complicado, pero es generalmente más estructurado, ya que el comportamiento del algoritmo es predecible.
+
+En contraste, los algoritmos probabilísticos suelen requerir análisis más sofisticados, pues implican calcular esperanzas matemáticas, probabilidades de error, o tiempos esperados de ejecución, que dependen tanto de la entrada como de las distribuciones de probabilidad asociadas a las elecciones aleatorias internas del algoritmo.
+
+## Medidas de Tiempo en Análisis de Algoritmos
+✦ Tiempo Promedio (Average-case Time Complexity):
+Aplica a algoritmos deterministas.
+
+Se refiere al tiempo medio de ejecución sobre todas las entradas de un tamaño dado, bajo una distribución de probabilidad asumida sobre las entradas.
+
+Útil cuando se conoce el perfil estadístico de los datos de entrada.
+
+✦ Tiempo Esperado (Expected Time Complexity):
+Aplica a algoritmos probabilísticos o aleatorizados.
+
+Se refiere al tiempo promedio de ejecución sobre una entrada fija, calculado en función de las elecciones aleatorias realizadas por el algoritmo durante su ejecución.
+
+✦ Tiempo Esperado en el Peor Caso (Expected Time in Worst Case):
+Considera el tiempo promedio esperado de ejecución sobre todas las posibles ejecuciones aleatorias, para la peor entrada posible.
+
+Es una medida más conservadora y útil para establecer cotas superiores de rendimiento.
+
+<img width="768" height="188" alt="image" src="https://github.com/user-attachments/assets/566fec95-624b-44ab-86e4-d84d1f808e5c" />
+
+<img width="756" height="288" alt="image" src="https://github.com/user-attachments/assets/84ada2ac-8568-4557-b676-85c4438324bd" />
+
+ <img width="646" height="296" alt="image" src="https://github.com/user-attachments/assets/bcfbcb5c-5aba-4bed-a2fc-81ea4c1a6daf" />
+
+<img width="644" height="322" alt="image" src="https://github.com/user-attachments/assets/fc1fecf3-2d1c-4c7e-9ee2-dd6025f39af1" />
+
+## Números Pseudoaleatorios
+Los números pseudoaleatorios son secuencias de valores generadas mediante algoritmos deterministas, conocidos como generadores de números pseudoaleatorios (PRNG, por sus siglas en inglés), que emulan el comportamiento estadístico de una fuente aleatoria real.
+
+Aunque estos números se producen mediante funciones matemáticas totalmente determinísticas, están diseñados para presentar propiedades estadísticas equivalentes a las de secuencias aleatorias verdaderas, tales como uniformidad, independencia y distribución predecible, dentro de ciertos límites.
+
+Debido a estas propiedades, los PRNG son ampliamente utilizados en algoritmos probabilísticos, métodos de Monte Carlo, simulación estocástica, criptoanálisis no crítico, y pruebas estadísticas, donde se requiere un comportamiento que aparente aleatoriedad sin necesidad de una fuente de entropía física.
+
+## Método del generador lineal congruencial:
+✦ Es el método más utilizado y se basa en la siguiente fórmula recursiva:
+𝑋!"# =  𝑎𝑋!+𝑐 𝑚𝑜𝑑𝑚 ✦ Dónde:
+𝑋! Es la semilla inicial
+	𝑎, 𝑐, 𝑚	son constantes eteras elegidas cuidadosamente
+•	Ejemplo
+<img width="777" height="305" alt="image" src="https://github.com/user-attachments/assets/e6c3b66c-e21d-4a3f-8b31-328dae207fe5" />
 
 ## Taller 
 ![Imagen de WhatsApp 2025-06-23 a las 10 45 43_1ccea423](https://github.com/user-attachments/assets/6b48db33-a4e9-4b97-bd7a-042c7312bf9b)
