@@ -559,18 +559,6 @@ Mon, im - i + 1) y M(m, im).
 Retrotrayéndonos a la sección anterior, resulta descorazonador que una reducción exponencial del número de multiplicaciones necesario para calcular a" no se traduzca en un espectacular ahorro de tiempo de ejecución. Sin embargo, existen aplicaciones para las cuales es razonable contar todas las multiplicaciones como de un mismo coste. Tal es el caso si estamos interesados en la aritmética modular, esto es, en el cálculo de a" módulo algún tercer entero z. Recuerde que x mod z denota el resto de la división entera de x por z. Por ejemplo, 25 mod 7 = 4 porque 25
 = 3X7 + 4. Si x e y son dos enteros entre 0 y z- I, v si z es un entero de tamaño m, entonces la multiplicación modular xy mod z necesita una multiplicación entera ordinaria de dos enteros de tamaño in como máximo, dando lugar a un entero de tamaño 2m como máximo, seguida por división del producto por z, un entero de tamaño m, para calcular el resto de la división. Por tanto, el tiempo que requiere cada multiplicación.
 
-## PROGRAMACIÓN DINÁMICA Semana 8
-## DOS EJEMPLOS SENCILLOS
-### Cálculo del coeficiente binomial
-### El campeonato mundial
-## DEVOLVER CAMBIO (2)
-## EL PRINCIPIO DE OPTIMALIDAD
-## EL PROBLEMA DE LA MOCHILA (2)
-## CAMINOS MÍNIMOS
-## MULTIPLICACIÓN ENCADENADA DE MATRICES
-## ENFOQUES QUE APLICAN RECURSIÓN
-## FUNCIONES CON MEMORIA
-
 # Talleres 
 
 ![image](https://github.com/user-attachments/assets/90e2ac91-9a83-4bc7-ba8d-e2d795b7ef00)
@@ -718,6 +706,73 @@ public class FibonacciIterativo {
 
 
 # Bimestre 2 
+
+# 	Algoritmos voraces
+
+Poseen una implementación ágil y de baja complejidad computacional.
+Son adecuados para abordar problemas de optimización combinatoria.
+No aseguran la obtención de una solución globalmente óptima en todos los casos.
+Operan siguiendo un enfoque heurístico basado en decisiones localmente óptimas en cada iteración, con el objetivo de aproximarse a una solución óptima global.
+
+<img width="718" height="392" alt="image" src="https://github.com/user-attachments/assets/7bc05b3a-72c4-4007-a159-d625a75cc3b9" />
+
+
+## Ejemplo de Aplicación:
+
+Realizar un pago a un cliente utilizando la menor cantidad posible de monedas disponibles.
+
+## Ventajas
+-Requieren una implementación sencilla y de bajo costo computacional.
+-Producen soluciones eficientes en tiempo y recursos para muchos casos 
+ prácticos.
+-En determinadas situaciones, pueden llegar a obtener la solución     
+ globalmente óptima.
+
+## Desventajas
+No todos los problemas de optimización son resolubles mediante enfoques voraces (greedy algorithms).
+La elección de soluciones localmente óptimas no garantiza alcanzar una solución globalmente óptima.
+Puede ser complejo definir una función de selección que asegure decisiones óptimas en cada paso del algoritmo.
+
+# 	Grafos
+
+Árbol de Recubrimiento Mínimo (Minimum Spanning Tree - MST)
+Un árbol de expansión (o recubrimiento) de un grafo no dirigido y conectado 
+𝐺
+=
+(
+𝑉
+,
+𝐸
+)
+G=(V,E), con pesos asociados a sus aristas, es un subgrafo acíclico que incluye todos los vértices del grafo y cuya estructura forma un árbol.
+
+El costo total de dicho árbol se define como la suma de los pesos de las aristas que lo componen.
+
+El problema consiste en encontrar el árbol de expansión con el costo mínimo posible, es decir, el árbol de expansión mínima del grafo 
+𝐺
+G.
+
+Este tipo de problema es ampliamente utilizado en el diseño óptimo de redes de comunicación, distribución de servicios, y estructuras de conectividad con mínima inversión de recursos.
+
+Definición técnica de grafo:
+Un grafo es una estructura matemática representada como 
+𝐺
+=
+(
+𝑉
+,
+𝐸
+)
+G=(V,E), donde:
+
+𝑉
+V es un conjunto finito de vértices (también llamados nodos), y
+
+𝐸
+E es un conjunto de pares de vértices, conocidos como aristas (o enlaces), que pueden ser dirigidas o no dirigidas.
+
+Dependiendo del contexto, las aristas pueden tener pesos asociados, que representan costos, distancias o capacidades.
+
 ## Taller Semana 9
 ![Imagen de WhatsApp 2025-06-23 a las 10 45 43_1ccea423](https://github.com/user-attachments/assets/6b48db33-a4e9-4b97-bd7a-042c7312bf9b)
 ![Imagen de WhatsApp 2025-06-23 a las 10 45 43_1db9e59e](https://github.com/user-attachments/assets/28cd0ebe-d7f8-4081-a5d8-ab8cf3e0071b)
