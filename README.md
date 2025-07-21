@@ -729,6 +729,35 @@ Finalmente
 
 <img width="534" height="256" alt="image" src="https://github.com/user-attachments/assets/d98fe840-5265-45c4-b87e-3c711caba631" />
 
+<img width="482" height="265" alt="image" src="https://github.com/user-attachments/assets/652bde4d-b20a-4f5c-b83a-81e0aaace90e" />
+
+# Ordenacion 
+
+<img width="602" height="262" alt="image" src="https://github.com/user-attachments/assets/2f97e22d-31b8-4c9c-8a1a-4369ef2ef9c4" />
+
+<img width="477" height="258" alt="image" src="https://github.com/user-attachments/assets/57f8c9e6-167a-4cf5-bed5-e7ecdef40ee5" />
+
+<img width="432" height="265" alt="image" src="https://github.com/user-attachments/assets/666900ee-4db2-4825-8948-3ca96b004393" />
+
+<img width="593" height="266" alt="image" src="https://github.com/user-attachments/assets/d537e488-8c24-423f-af47-0a210834f483" />
+
+<img width="557" height="298" alt="image" src="https://github.com/user-attachments/assets/b53e6cb4-34a9-43fe-a14a-ea51989a4ced" />
+
+<img width="619" height="170" alt="image" src="https://github.com/user-attachments/assets/3af48be1-6804-4368-8d20-073a2f1b0b70" />
+
+<img width="1288" height="724" alt="image" src="https://github.com/user-attachments/assets/aafc2d9a-370f-4ef9-85f6-b9fe73034aaf" />
+
+<img width="1130" height="568" alt="image" src="https://github.com/user-attachments/assets/f2c4b9d9-6b16-4c9d-afbb-df45ad1c2cbd" />
+
+<img width="1500" height="484" alt="image" src="https://github.com/user-attachments/assets/7631f79d-1ac8-4b64-a3c0-b5bddc525de9" />
+
+<img width="1460" height="690" alt="image" src="https://github.com/user-attachments/assets/15e66486-e25b-41e4-bb1c-2a359518c8d0" />
+
+# Ordenación rápida (Quicksort)
+<img width="616" height="248" alt="image" src="https://github.com/user-attachments/assets/da1889df-0148-4bc2-9300-29187c58a58e" />
+
+<img width="645" height="254" alt="image" src="https://github.com/user-attachments/assets/7efa5baf-fa4d-4ca8-8c46-ab0547b55b3e" />
+
 
 # 	Algoritmos voraces
 
