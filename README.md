@@ -1,4 +1,4 @@
-# AnalisisdeAlgoritmos
+ # AnalisisdeAlgoritmos
 ## Fecha 14/04/2025
 ## Nombre Fabian Cañar
 
@@ -706,6 +706,366 @@ public class FibonacciIterativo {
 
 
 # Bimestre 2 
+
+# RECORRIDO EN PROFUNDIDAD: GRAFOS 
+
+El recorrido en profundidad (DFS) es un algoritmo utilizado para explorar o recorrer todos los nodos de un grafo dirigido de forma sistemática. Parte de un nodo origen y explora tan profundo como sea posible por cada rama antes de retroceder (backtracking).
+
+## 1. Grafo Dirigido
+ 
+Un grafo dirigido (digrafo) es un conjunto de nodos (vértices) conectados por aristas que tienen una dirección. Es decir, si hay una arista de A → B, no significa que exista una arista de B → A.
+
+## 2. Recorrido
+El DFS visita nodos siguiendo las aristas en la dirección indicada, hasta llegar a un nodo sin salidas no visitadas, y luego retrocede para explorar otras ramas.
+
+## 4. Pila Implícita (Recursión) o Explícita
+El DFS puede implementarse recursivamente (usando el stack de llamadas del sistema).
+
+O también iterativamente, usando una estructura de pila explícita.
+
+## 4. Nodos Visitados
+Se lleva un registro de los nodos visitados para:
+
+Evitar ciclos infinitos.
+
+Asegurar que cada nodo se visita una sola vez.
+
+## 5. Marcado de Estados (en algunos contextos)
+Para análisis más avanzados (como detección de ciclos o componentes fuertemente conexos), los nodos pueden tener estados:
+
+No visitado
+
+Visitando
+
+Visitado
+
+## 6. Aplicaciones de DFS en grafos dirigidos
+Detección de ciclos
+
+Orden topológico
+
+Componentes fuertemente conexas (Kosaraju o Tarjan)
+
+Resolución de laberintos
+
+Análisis de dependencias
+
+## Complejidad
+
+Tiempo: O(V + E), donde V es el número de vértices y E el número de aristas.
+
+Espacio: O(V), por el almacenamiento de nodos visitados y la pila de llamadas.
+
+# RECORRIDO EN ANCHURA 
+
+El recorrido en anchura (BFS) es un algoritmo de búsqueda utilizado para recorrer o explorar los nodos de un grafo dirigido en niveles, es decir, primero visita todos los vecinos inmediatos de un nodo antes de continuar con los vecinos de esos vecinos, y así sucesivamente.
+
+## 1. Grafo Dirigido
+Un grafo dirigido (o digrafo) es una estructura formada por:
+
+Vértices (nodos)
+
+Aristas dirigidas, donde una conexión A → B indica que puedes ir de A a B, pero no de B a A (a menos que exista otra arista B → A).
+
+## 2. Exploración por Niveles
+El BFS visita los nodos por capas:
+
+Primero visita todos los nodos a distancia 1 desde el nodo inicial.
+
+Luego los que están a distancia 2, y así sucesivamente.
+
+## 3. Cola (Queue)
+Para implementar el BFS, se usa una cola FIFO que permite procesar los nodos en el orden en que se descubren.
+
+## 4. Nodos Visitados
+Es necesario llevar un registro de los nodos ya visitados para:
+
+Evitar ciclos infinitos.
+
+No volver a visitar el mismo nodo.
+
+## 5. Aplicaciones del BFS
+Cálculo de la ruta más corta (en número de aristas)
+
+Búsqueda de caminos
+
+Detección de ciclos
+
+Algoritmos de flujo
+
+Navegación por redes o mapas
+
+## Complejidad
+
+Tiempo: O(V + E), donde V es el número de vértices y E el número de aristas.
+
+Espacio: O(V), por la cola y el registro de nodos visitados.
+
+# GENERACIÓN DE NÚMEROS PSEUDOALBATORIO 
+
+La generación de números pseudoaleatorios es el proceso mediante el cual un algoritmo produce una secuencia de números que aparentan ser aleatorios, pero que en realidad son determinísticos, es decir, generados por una fórmula matemática.
+
+Estos números se llaman pseudoaleatorios porque:
+
+Parecen aleatorios, pero
+
+Son predecibles si se conoce el algoritmo y la semilla utilizada.
+
+# Conceptos Clave
+
+## 1. Aleatoriedad vs. Pseudoaleatoriedad
+Números verdaderamente aleatorios: Provienen de fenómenos físicos impredecibles (por ejemplo, ruido atmosférico, radiactividad, etc.).
+
+Números pseudoaleatorios: Son generados por algoritmos deterministas, lo que los hace reproducibles.
+
+## 2. Semilla (Seed)
+Es el valor inicial que se le da al generador.
+
+Una misma semilla siempre genera la misma secuencia.
+
+Cambiar la semilla permite obtener diferentes secuencias pseudoaleatorias.
+
+## 3. Algoritmos Generadores
+Algunos algoritmos clásicos para generar números pseudoaleatorios son:
+
+🔹 a) Generador Congruencial Lineal (LCG)
+Usa la fórmula:
+
+𝑋
+𝑛
++
+1
+=
+(
+𝑎
+𝑋
+𝑛
++
+𝑐
+)
+m
+o
+d
+ 
+ 
+𝑚
+X 
+n+1
+​
+ =(aX 
+n
+​
+ +c)modm
+Donde:
+
+𝑋
+0
+X 
+0
+​
+ : semilla
+
+𝑎
+a: multiplicador
+
+𝑐
+c: incremento
+
+𝑚
+m: módulo
+
+Es simple y rápido, pero puede tener ciclos cortos.
+
+🔹 b) Mersenne Twister
+Es uno de los generadores más utilizados en software moderno (como Python).
+
+Tiene un período extremadamente largo (2¹⁹⁹³⁷ − 1).
+
+Produce secuencias de alta calidad para simulaciones y juegos.
+
+## 4. Período
+Es la longitud de la secuencia antes de que el generador empiece a repetirse.
+
+Un buen generador debe tener un período largo y una distribución uniforme.
+
+## 5. Aplicaciones
+Simulación y modelado (por ejemplo, Monte Carlo)
+
+Criptografía (aunque aquí se prefieren generadores criptográficamente seguros)
+
+Juegos y entornos virtuales
+
+Inteligencia artificial
+
+Estadística y pruebas de hipótesis
+
+## Características deseables de un buen generador pseudoaleatorio
+
+Buena distribución estadística
+
+Largo período
+
+Velocidad de generación
+
+Reproducibilidad
+
+Independencia entre secuencias
+
+# ALGORITMOS PROBABILISTAS NUMÉRICOS
+
+Los algoritmos probabilistas numéricos son métodos de cálculo que emplean números aleatorios o pseudoaleatorios para aproximar soluciones numéricas a problemas matemáticos o computacionales que son difíciles o imposibles de resolver exactamente por métodos deterministas.
+
+Estos algoritmos no garantizan un resultado exacto, pero permiten obtener una buena estimación con cierto nivel de confianza, lo cual es especialmente útil en problemas de alta complejidad.
+
+## 1. Probabilismo
+Estos algoritmos se basan en el uso de técnicas estadísticas y aleatorias para realizar cálculos, simulaciones o estimaciones.
+
+## 2. Aproximación
+Producen resultados aproximados que tienden a ser más precisos mientras más muestras aleatorias se utilicen.
+
+## 3. Complejidad Reducida
+En muchos casos, tienen menos complejidad computacional que los métodos deterministas, especialmente en problemas de muchas dimensiones.
+
+# Tipos de Algoritmos Probabilistas Numéricos
+
+## Método de Monte Carlo
+Usa simulación aleatoria para estimar valores numéricos.
+
+Ejemplo clásico: estimación del valor de π lanzando puntos aleatorios sobre un cuadrado con un círculo inscrito.
+
+## Método de Las Vegas
+Usa aleatoriedad pero siempre da una respuesta correcta, aunque el tiempo de ejecución es variable.
+
+Se usa menos en el ámbito puramente numérico, pero es relevante en la clasificación de algoritmos probabilistas.
+
+## Método de Quasi-Monte Carlo
+Emplea secuencias determinísticas (de baja discrepancia) en lugar de aleatorias para mejorar la precisión de Monte Carlo.
+
+## Aplicaciones Comunes
+Integración numérica de funciones complicadas
+
+Resolución de ecuaciones diferenciales estocásticas
+
+Simulación de sistemas físicos, biológicos o financieros
+
+Optimización global de funciones complicadas
+
+Análisis de riesgo e incertidumbre
+
+Procesamiento de señales o imágenes
+
+# TIEMPO ESPERADO FRENTE A TIEMPO PROMEDIO.
+
+El tiempo esperado es un concepto probabilístico que representa el valor esperado (esperanza matemática) del tiempo que tomará un evento o proceso aleatorio.
+
+𝐸
+(
+𝑇
+)
+=
+∑
+𝑖
+𝑃
+𝑖
+⋅
+𝑡
+𝑖
+E(T)= 
+i
+∑
+​
+ P 
+i
+​
+ ⋅t 
+i
+​
+ 
+Donde:
+
+𝐸
+(
+𝑇
+)
+E(T) es el tiempo esperado
+
+𝑃
+𝑖
+P 
+i
+​
+  es la probabilidad del evento 
+𝑖
+i
+
+𝑡
+𝑖
+t 
+i
+​
+  es el tiempo asociado a ese evento
+
+Es teórico, basado en la probabilidad.
+
+Se usa cuando los tiempos son aleatorios y dependen de un modelo probabilístico.
+
+Se aplica en algoritmos probabilistas, teoría de colas, simulaciones, etc.
+
+El tiempo promedio es la media aritmética de una colección de tiempos observados en múltiples ejecuciones reales o simuladas.
+
+𝑇
+ˉ
+=
+1
+𝑛
+∑
+𝑖
+=
+1
+𝑛
+𝑡
+𝑖
+T
+ˉ
+ = 
+n
+1
+​
+  
+i=1
+∑
+n
+​
+ t 
+i
+​
+ 
+Donde:
+
+𝑇
+ˉ
+T
+ˉ
+  es el tiempo promedio
+
+𝑡
+𝑖
+t 
+i
+​
+  es cada tiempo medido
+
+𝑛
+n es el número total de observaciones
+
+Es empírico, basado en datos reales u observaciones.
+
+Puede usarse para medir rendimiento de algoritmos o procesos en la práctica.
+
+Aumenta su precisión con más observaciones.
+
+
+
 
 # 	Divide y vencerás
 09 81	12 34 w  x	y  z
