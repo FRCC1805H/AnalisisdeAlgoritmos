@@ -1418,6 +1418,150 @@ Taller
 <img width="776" height="531" alt="image" src="https://github.com/user-attachments/assets/303d5589-7b1f-4250-aaac-f51503a28bc2" />
 
 # Defensa 
+## Taller: Generación de números Pseudoaleatorios
+<img width="228" height="619" alt="image" src="https://github.com/user-attachments/assets/639cf6c8-8ac6-4ced-8923-15cef65c7b39" />
 
+```java
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package generador;
 
+/**
+ *
+ * @author FabianCapi
+ */
+import java.util.*;
 
+public class GeneradorMCL {
+    // Parámetros del MCL
+    static final long a = 1664525;
+    static final long c = 1013904223;
+    static final long m = (long) Math.pow(2, 32); // 2^32
+
+    // Generador de números pseudoaleatorios
+    public static List<Double> generarNumeros(long semilla, int cantidad) {
+        List<Double> numeros = new ArrayList<>();
+        long x = semilla;
+
+        for (int i = 0; i < cantidad; i++) {
+            x = (a * x + c) % m;
+            double u = (double) x / m; // Normalizar a [0,1)
+            numeros.add(u);
+        }
+
+        return numeros;
+    }
+
+    // Analiza cuántos números caen en cada intervalo
+    public static Map<String, Integer> analizarDistribucion(List<Double> numeros) {
+        Map<String, Integer> intervalos = new LinkedHashMap<>();
+        intervalos.put("[0.0, 0.2)", 0);
+        intervalos.put("[0.2, 0.4)", 0);
+        intervalos.put("[0.4, 0.6)", 0);
+        intervalos.put("[0.6, 0.8)", 0);
+        intervalos.put("[0.8, 1.0)", 0);
+
+        for (double num : numeros) {
+            if (num < 0.2)
+                intervalos.put("[0.0, 0.2)", intervalos.get("[0.0, 0.2)") + 1);
+            else if (num < 0.4)
+                intervalos.put("[0.2, 0.4)", intervalos.get("[0.2, 0.4)") + 1);
+            else if (num < 0.6)
+                intervalos.put("[0.4, 0.6)", intervalos.get("[0.4, 0.6)") + 1);
+            else if (num < 0.8)
+                intervalos.put("[0.6, 0.8)", intervalos.get("[0.6, 0.8)") + 1);
+            else
+                intervalos.put("[0.8, 1.0)", intervalos.get("[0.8, 1.0)") + 1);
+        }
+
+        return intervalos;
+    }
+
+    public static void main(String[] args) {
+        long semilla = 123456789; // puedes cambiarla para observar los efectos
+        int cantidad = 100;
+
+        List<Double> numeros = generarNumeros(semilla, cantidad);
+
+        // Mostrar los primeros 10 valores
+        System.out.println("Primeros 10 números generados:");
+        for (int i = 0; i < 10; i++) {
+            System.out.printf("[%2d] %.8f\n", i + 1, numeros.get(i));
+        }
+
+        // Análisis de distribución
+        Map<String, Integer> distribucion = analizarDistribucion(numeros);
+        System.out.println("\nDistribución por intervalos:");
+        for (Map.Entry<String, Integer> entrada : distribucion.entrySet()) {
+            System.out.println(entrada.getKey() + ": " + entrada.getValue());
+        }
+    }
+}
+```
+## Taller Aplicación para determinar el camino mínimo a partir de un grafo dirigido
+Desarrollar una aplicación para determinar el camino mínimo a partir de un grafo dirigido utilizando el algoritmo de Dijkstra o Floyd-Warshall a partir de un grafo dirigido.
+Suba el archivo .java
+<img width="793" height="183" alt="image" src="https://github.com/user-attachments/assets/dd7e7064-eefa-4a14-92fe-6c085f594785" />
+
+```java
+import java.util.*;
+
+public class DijkstraShortestPath {
+    static final int V = 5;
+
+    int minDistance(int[] dist, boolean[] sptSet) {
+        int min = Integer.MAX_VALUE, min_index = -1;
+
+        for (int v = 0; v < V; v++)
+            if (!sptSet[v] && dist[v] <= min) {
+                min = dist[v];
+                min_index = v;
+            }
+
+        return min_index;
+    }
+
+    void dijkstra(int[][] graph, int src) {
+        int[] dist = new int[V]; 
+        boolean[] sptSet = new boolean[V];
+
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[src] = 0;
+
+        for (int count = 0; count < V - 1; count++) {
+            int u = minDistance(dist, sptSet);
+
+            sptSet[u] = true;
+
+            for (int v = 0; v < V; v++)
+                if (!sptSet[v] && graph[u][v] != 0 &&
+                    dist[u] != Integer.MAX_VALUE &&
+                    dist[u] + graph[u][v] < dist[v])
+                    dist[v] = dist[u] + graph[u][v];
+        }
+
+        System.out.println("Nodo\tDistancia desde " + src);
+        for (int i = 0; i < V; i++)
+            System.out.println(i + "\t" + dist[i]);
+    }
+
+    public static void main(String[] args) {
+        int[][] graph = {
+            {0, 0, 0, 0, 0},
+            {1, 0, 1, 1, 0},
+            {0, 0, 0, 1, 0},
+            {0, 1, 0, 0, 0},
+            {1, 0, 0, 0, 0}
+        };
+
+        DijkstraShortestPath t = new DijkstraShortestPath();
+        t.dijkstra(graph, 1); // desde el nodo 1
+    }
+}
+```
+# Taller Aplicación encontrar el árbol de recubrimiento mínimo a partir de un grafo no dirigido
+Desarrolle una aplicación que permita encontrar el árbol de recubrimiento mínimo a partir de un grafo no dirigido. Debe desarrollar el algoritmo de Kruskal o Prim. La aplicación deberá presentar los diferentes valores que se están generando al aplicar el algoritmo (Prueba de escritorio).
+
+Suba el archivo .java sin comprimir.
