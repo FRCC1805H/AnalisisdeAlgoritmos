@@ -1401,4 +1401,23 @@ S(suma Actual	x	s + x	S(conjunto )
 Taller 
 ![image](https://github.com/user-attachments/assets/36b0ec14-cf41-4aeb-8631-d73407c62943)
 
+Taller 
+
+<img width="467" height="622" alt="image" src="https://github.com/user-attachments/assets/2fa9feb2-22d3-4468-b8c7-f58c2c9a8af8" />
+
+<img width="357" height="119" alt="image" src="https://github.com/user-attachments/assets/ecbe6374-cad8-49c8-b228-a54f0d940212" />
+
+<img width="1705" height="258" alt="image" src="https://github.com/user-attachments/assets/37e4ac66-f758-46a2-a0b9-de3a2525ac80" />
+
+<img width="614" height="166" alt="image" src="https://github.com/user-attachments/assets/0218ea41-a09b-42c5-aec5-d852a7cca194" />
+
+Taller 
+
+<img width="1140" height="574" alt="image" src="https://github.com/user-attachments/assets/69831786-338e-499d-ada5-fb7efab3453e" />
+
+<img width="776" height="531" alt="image" src="https://github.com/user-attachments/assets/303d5589-7b1f-4250-aaac-f51503a28bc2" />
+
+# Defensa 
+
+
 
