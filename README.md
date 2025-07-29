@@ -1377,11 +1377,6 @@ Aunque estos números se producen mediante funciones matemáticas totalmente det
 Debido a estas propiedades, los PRNG son ampliamente utilizados en algoritmos probabilísticos, métodos de Monte Carlo, simulación estocástica, criptoanálisis no crítico, y pruebas estadísticas, donde se requiere un comportamiento que aparente aleatoriedad sin necesidad de una fuente de entropía física.
 
 ## Método del generador lineal congruencial:
-✦ Es el método más utilizado y se basa en la siguiente fórmula recursiva:
-𝑋!"# =  𝑎𝑋!+𝑐 𝑚𝑜𝑑𝑚 ✦ Dónde:
-𝑋! Es la semilla inicial
-	𝑎, 𝑐, 𝑚	son constantes eteras elegidas cuidadosamente
-•	Ejemplo
 <img width="777" height="305" alt="image" src="https://github.com/user-attachments/assets/e6c3b66c-e21d-4a3f-8b31-328dae207fe5" />
 
 ## Taller 
@@ -1398,10 +1393,10 @@ S(suma Actual	x	s + x	S(conjunto )
 
 ![image](https://github.com/user-attachments/assets/dab2dfb2-2218-4ebd-b9f3-1385203c3750)
 
-Taller 
+## Taller 
 ![image](https://github.com/user-attachments/assets/36b0ec14-cf41-4aeb-8631-d73407c62943)
 
-Taller 
+## Taller 
 
 <img width="467" height="622" alt="image" src="https://github.com/user-attachments/assets/2fa9feb2-22d3-4468-b8c7-f58c2c9a8af8" />
 
@@ -1411,7 +1406,7 @@ Taller
 
 <img width="614" height="166" alt="image" src="https://github.com/user-attachments/assets/0218ea41-a09b-42c5-aec5-d852a7cca194" />
 
-Taller 
+## Taller 
 
 <img width="1140" height="574" alt="image" src="https://github.com/user-attachments/assets/69831786-338e-499d-ada5-fb7efab3453e" />
 
@@ -1503,6 +1498,7 @@ public class GeneradorMCL {
 ## Taller Aplicación para determinar el camino mínimo a partir de un grafo dirigido
 Desarrollar una aplicación para determinar el camino mínimo a partir de un grafo dirigido utilizando el algoritmo de Dijkstra o Floyd-Warshall a partir de un grafo dirigido.
 Suba el archivo .java
+
 <img width="793" height="183" alt="image" src="https://github.com/user-attachments/assets/dd7e7064-eefa-4a14-92fe-6c085f594785" />
 
 ```java
@@ -1565,3 +1561,61 @@ public class DijkstraShortestPath {
 Desarrolle una aplicación que permita encontrar el árbol de recubrimiento mínimo a partir de un grafo no dirigido. Debe desarrollar el algoritmo de Kruskal o Prim. La aplicación deberá presentar los diferentes valores que se están generando al aplicar el algoritmo (Prueba de escritorio).
 
 Suba el archivo .java sin comprimir.
+<img width="1547" height="301" alt="image" src="https://github.com/user-attachments/assets/b3b129f8-6b14-46a0-99a5-21851849c396" />
+
+```java
+import java.util.*;
+
+public class DijkstraShortestPath {
+    static final int V = 5;
+
+    int minDistance(int[] dist, boolean[] sptSet) {
+        int min = Integer.MAX_VALUE, min_index = -1;
+
+        for (int v = 0; v < V; v++)
+            if (!sptSet[v] && dist[v] <= min) {
+                min = dist[v];
+                min_index = v;
+            }
+
+        return min_index;
+    }
+
+    void dijkstra(int[][] graph, int src) {
+        int[] dist = new int[V]; 
+        boolean[] sptSet = new boolean[V];
+
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[src] = 0;
+
+        for (int count = 0; count < V - 1; count++) {
+            int u = minDistance(dist, sptSet);
+
+            sptSet[u] = true;
+
+            for (int v = 0; v < V; v++)
+                if (!sptSet[v] && graph[u][v] != 0 &&
+                    dist[u] != Integer.MAX_VALUE &&
+                    dist[u] + graph[u][v] < dist[v])
+                    dist[v] = dist[u] + graph[u][v];
+        }
+
+        System.out.println("Nodo\tDistancia desde " + src);
+        for (int i = 0; i < V; i++)
+            System.out.println(i + "\t" + dist[i]);
+    }
+
+    public static void main(String[] args) {
+        int[][] graph = {
+            {0, 0, 0, 0, 0},
+            {1, 0, 1, 1, 0},
+            {0, 0, 0, 1, 0},
+            {0, 1, 0, 0, 0},
+            {1, 0, 0, 0, 0}
+        };
+
+        DijkstraShortestPath t = new DijkstraShortestPath();
+        t.dijkstra(graph, 1); // desde el nodo 1
+    }
+}
+```
